@@ -1,8 +1,14 @@
+/* =========================================
+   1. AOS Animation Initialization
+   ========================================= */
 AOS.init({
   duration: 1000,
   once: true,
 });
 
+/* =========================================
+   2. Scroll To Top Button Logic
+   ========================================= */
 let mybutton = document.getElementById("scrollToTopBtn");
 
 window.onscroll = function () {
@@ -10,6 +16,7 @@ window.onscroll = function () {
 };
 
 function scrollFunction() {
+  // Show button when scrolled down 200px
   if (
     document.body.scrollTop > 200 ||
     document.documentElement.scrollTop > 200
@@ -24,6 +31,9 @@ mybutton.addEventListener("click", function () {
   window.scrollTo({ top: 0, behavior: "smooth" });
 });
 
+/* =========================================
+   3. Active Navigation Link on Scroll
+   ========================================= */
 const sections = document.querySelectorAll("section");
 const navLi = document.querySelectorAll(".header_menu li a");
 
@@ -32,6 +42,7 @@ window.addEventListener("scroll", () => {
 
   sections.forEach((section) => {
     const sectionTop = section.offsetTop;
+    // -200 is an offset to trigger change before section hits top exactly
     if (scrollY >= sectionTop - 200) {
       current = section.getAttribute("id");
     }
@@ -45,17 +56,23 @@ window.addEventListener("scroll", () => {
   });
 });
 
+/* =========================================
+   4. Auto-Update Copyright Year
+   ========================================= */
 const year = new Date().getFullYear();
 const copyrightElement = document.getElementById("copyright");
 if (copyrightElement) {
   copyrightElement.innerHTML = `© ${year} Daria Sianska. All rights reserved.`;
 }
 
-/* === Dark Mode Logic === */
+/* =========================================
+   5. Dark Mode Logic (with Local Storage)
+   ========================================= */
 const themeToggleBtn = document.getElementById("theme-toggle");
 const themeIcon = themeToggleBtn.querySelector("i");
 const body = document.body;
 
+// Check if user previously selected dark mode
 const savedTheme = localStorage.getItem("theme");
 
 if (savedTheme === "dark") {
@@ -70,6 +87,7 @@ themeToggleBtn.addEventListener("click", () => {
   if (body.classList.contains("dark-theme")) {
     themeIcon.classList.remove("fa-moon");
     themeIcon.classList.add("fa-sun");
+    // Save preference to Local Storage
     localStorage.setItem("theme", "dark");
   } else {
     themeIcon.classList.remove("fa-sun");
@@ -78,7 +96,9 @@ themeToggleBtn.addEventListener("click", () => {
   }
 });
 
-/* === Typed.js Effect === */
+/* =========================================
+   6. Typewriter Effect (Typed.js)
+   ========================================= */
 const typed = new Typed(".typed-text", {
   strings: [
     "Full Stack Developer.",

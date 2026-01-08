@@ -1,4 +1,4 @@
-/* === 1. Глобальні налаштування === */
+/* === 1. Global Settings === */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
 
 :root {
@@ -131,7 +131,7 @@ a {
   transition: var(--transition);
 }
 
-/* === 2. Контейнер === */
+/* === 2. Container === */
 .container {
   max-width: var(--container-width);
   margin: 0 auto;
@@ -149,7 +149,7 @@ a {
   border: 0;
 }
 
-/* === 3. Кнопки === */
+/* === 3. Buttons === */
 button,
 .contact-section_button {
   background-color: var(--primary-color);
@@ -271,7 +271,7 @@ button:hover,
   margin: 0 10px;
 }
 
-/* === 6. Секції (Загальне) === */
+/* === 6. Sections (General) === */
 section {
   padding: 5rem 0;
 }
@@ -443,7 +443,6 @@ section h2::after {
   pointer-events: none;
 }
 
-/* Сама форма */
 .contact-section_form {
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(5px);
@@ -545,7 +544,6 @@ section h2::after {
   font-size: 0;
 }
 
-/* Іконки тепер завжди білі */
 .footer_socials i {
   font-size: 1.2rem;
   color: #ffffff;
@@ -609,21 +607,26 @@ section h2::after {
   background: var(--primary-hover);
 }
 
+/* === Typed.js Cursor === */
 .typed-cursor {
   color: var(--primary-color);
   font-size: inherit;
 }
 
-/* === 11. Адаптивність (Mobile) === */
+/* === 11. Adaptability (Mobile & Tablet) === */
+
+/* Tablets and smaller screens (up to 768px) */
 @media (max-width: 768px) {
+  /* --- Header --- */
   .header_container {
     flex-direction: column;
-    gap: 1rem;
+    gap: 1.5rem;
   }
 
   .header_nav {
     flex-direction: column;
     gap: 1rem;
+    width: 100%;
   }
 
   .header_menu {
@@ -632,27 +635,45 @@ section h2::after {
     gap: 15px;
   }
 
-  .hero-section h1 {
-    font-size: 2.5rem;
+  /* Center action buttons (CV and Theme) */
+  .header_actions {
+    width: 100%;
+    justify-content: center;
+    margin-top: 5px;
   }
 
+  /* --- Hero Section --- */
+  .hero-section {
+    padding-top: 6rem;
+  }
+
+  .hero-section h1 {
+    font-size: 2.5rem;
+    line-height: 1.2;
+  }
+
+  /* --- Contact Section --- */
   .contact-section {
-    padding: 40px 15px;
+    padding: 60px 20px;
   }
 
   .contact-section_form {
-    padding: 2rem 1.5rem;
+    padding: 2.5rem 2rem;
+    width: 100%;
+    box-sizing: border-box;
   }
 
+  /* --- Footer --- */
   .footer_nav {
     flex-direction: column;
     gap: 2rem;
+    text-align: center;
   }
 
   .footer_menu {
     flex-direction: column;
     align-items: center;
-    gap: 10px;
+    gap: 15px;
   }
 
   .footer_contacts {
@@ -660,5 +681,43 @@ section h2::after {
     align-items: center;
     gap: 2rem;
     text-align: center;
+  }
+}
+
+/* Mobile phones (up to 480px) - Additional optimization */
+@media (max-width: 480px) {
+  section {
+    padding: 3rem 0;
+  }
+
+  .container {
+    padding: 0 15px;
+  }
+
+  .hero-section h1 {
+    font-size: 2rem;
+  }
+
+  .hero-section h2 {
+    font-size: 1.1rem;
+  }
+
+  .projects-section_container {
+    grid-template-columns: 1fr;
+  }
+
+  .header_actions {
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  button,
+  .contact-section_button {
+    width: 100%;
+    text-align: center;
+  }
+
+  .header_actions button {
+    width: auto;
   }
 }
