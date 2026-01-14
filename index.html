@@ -32,7 +32,6 @@
       content="https://dariasianka.github.io/images/avatar.jpg"
     />
     <title>Daria Sianska | Full Stack Developer</title>
-    <!-- === Styles === -->
     <link rel="stylesheet" href="css/styles.css" />
     <link rel="icon" type="image/png" href="images/favicon.png" />
     <link
@@ -42,7 +41,6 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   </head>
   <body>
-    <!-- === Header === -->
     <header class="header">
       <div class="container">
         <div class="header_container">
@@ -72,7 +70,6 @@
         </div>
       </div>
     </header>
-    <!-- === Hero Section === -->
     <section class="hero-section">
       <div class="container">
         <img src="images/avatar.jpg" alt="Daria Sianska" class="hero-avatar" />
@@ -84,11 +81,12 @@
           Building functional, responsive web applications with a keen eye for
           design and user experience. Based in Prague, Czechia.
         </p>
-        <a href="#projects"><button>View My Projects</button></a>
-        <a href="#contact"><button>Contact Me</button></a>
+        <div class="hero-buttons">
+          <a href="#projects" class="btn-primary">View My Projects</a>
+          <a href="#contact" class="btn-secondary">Contact Me</a>
+        </div>
       </div>
     </section>
-    <!-- === About Section === -->
     <section class="about-section" id="about">
       <div class="container">
         <h2 data-aos="fade-up">About Me</h2>
@@ -104,7 +102,6 @@
         </p>
       </div>
     </section>
-    <!-- === Projects Section === -->
     <section class="projects-section" id="projects">
       <div class="container">
         <h2 data-aos="fade-up">Projects</h2>
@@ -226,7 +223,6 @@
         </div>
       </div>
     </section>
-    <!-- === Skills Section === -->
     <section class="skills-section" id="skills">
       <div class="container">
         <h2 data-aos="fade-up">Skills</h2>
@@ -251,7 +247,6 @@
         </div>
       </div>
     </section>
-    <!-- === Contact Section === -->
     <section class="contact-section" id="contact">
       <div class="container">
         <div class="contact-section_container">
@@ -261,7 +256,11 @@
               Open for full-time opportunities and interesting projects. Feel
               free to reach out!
             </p>
-            <form action="https://formspree.io/f/xlgdzklp" method="POST">
+            <form
+              action="https://formspree.io/f/xlgdzklp"
+              method="POST"
+              id="contactForm"
+            >
               <div class="contact-section_form-field input">
                 <label
                   class="input_label visually-hidden"
@@ -292,7 +291,6 @@
                   name="user-tel"
                   id="contact-user-tel"
                   placeholder="Phone number"
-                  pattern="^\+[0-9]{12}"
                   required
                 />
               </div>
@@ -335,7 +333,6 @@
         referrerpolicy="no-referrer-when-downgrade"
       ></iframe>
     </section>
-    <!-- === Footer === -->
     <footer class="footer">
       <div class="container">
         <div class="footer_container">

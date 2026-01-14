@@ -111,3 +111,45 @@ const typed = new Typed(".typed-text", {
   backDelay: 2000,
   loop: true,
 });
+
+/* =========================================
+   7. PORTFOLIO FORM SUBMISSION (AJAX)
+   ========================================= */
+const contactForm = document.getElementById("contactForm");
+
+if (contactForm) {
+  contactForm.addEventListener("submit", async function (event) {
+    event.preventDefault();
+
+    const submitBtn = contactForm.querySelector(".contact-section_button");
+    const originalText = submitBtn.innerText;
+
+    submitBtn.innerText = "Sending...";
+    submitBtn.disabled = true;
+
+    const formData = new FormData(contactForm);
+
+    try {
+      const response = await fetch(contactForm.action, {
+        method: "POST",
+        body: formData,
+        headers: {
+          Accept: "application/json",
+        },
+      });
+
+      if (response.ok) {
+        contactForm.reset();
+        window.location.href = "success.html";
+      } else {
+        alert("Oops! There was a problem submitting your form");
+        submitBtn.innerText = originalText;
+        submitBtn.disabled = false;
+      }
+    } catch (error) {
+      alert("Oops! There was a problem submitting your form");
+      submitBtn.innerText = originalText;
+      submitBtn.disabled = false;
+    }
+  });
+}
