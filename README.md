@@ -2,7 +2,7 @@
 
 Welcome to my personal portfolio website! This project showcases my skills, projects, and professional background as a Full Stack Developer and UI/UX Designer.
 
-🔗 **Live Demo:** [View Live Site](https://dariasyanska.github.io/portfolio/)
+🔗 **Live Demo:** [View Live Site](https://portfolio-nine-eta-i9t6ujjhlc.vercel.app/)
 
 ---
 
