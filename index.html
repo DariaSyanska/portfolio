@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -6,6 +6,8 @@
       name="description"
       content="Portfolio of Daria Sianska, a Full Stack Developer & UI/UX Designer based in Prague. View my projects in Next.js, React, and Laravel."
     />
+    <meta name="author" content="Daria Sianska" />
+    <meta name="theme-color" content="#ec4899" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://dariasianka.github.io/" />
@@ -35,21 +37,27 @@
     <link rel="stylesheet" href="css/styles.css" />
     <link rel="icon" type="image/png" href="images/favicon.png" />
     <link
+      href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   </head>
   <body>
+    <div class="bg-blobs">
+      <div class="blob blob-1"></div>
+      <div class="blob blob-2"></div>
+    </div>
+
     <header class="header">
       <div class="container">
         <div class="header_container">
           <nav class="header_nav">
-            <a
-              href="#home"
-              onclick="window.scrollTo({ top: 0, behavior: 'smooth' }); return false;"
-            >
-              <img src="./images/logo.png" alt="My Logo" />
+            <a href="#home">
+              <img src="./images/logo.png" alt="My Logo" loading="lazy" />
             </a>
             <ul class="header_menu">
               <li><a class="link" href="#about">About</a></li>
@@ -60,11 +68,14 @@
           </nav>
 
           <div class="header_actions">
-            <button id="theme-toggle" aria-label="Toggle Dark Mode">
-              <i class="fas fa-moon"></i>
+            <button id="theme-toggle" aria-label="Toggle theme">
+              <i class="fa-solid fa-moon"></i>
             </button>
-            <a href="CV_Daria_Sianska.pdf" download
-              ><button>Download CV</button></a
+            <a href="CV_Daria_Sianska.pdf" download class="btn-primary"
+              >Download Professional CV</a
+            >
+            <a href="images/cv.png" target="_blank" class="btn-secondary"
+              >View Creative Design</a
             >
           </div>
         </div>
@@ -72,7 +83,13 @@
     </header>
     <section class="hero-section">
       <div class="container">
-        <img src="images/avatar.jpg" alt="Daria Sianska" class="hero-avatar" />
+        <img
+          id="hero-avatar"
+          class="hero-avatar"
+          src="images/avatar-light.jpg"
+          alt="Daria Sianska"
+          loading="lazy"
+        />
         <h1>Welcome to My Website</h1>
         <h2 data-aos="fade-up">
           Hi, I'm Daria Sianska. <span class="typed-text"></span>
@@ -91,15 +108,98 @@
       <div class="container">
         <h2 data-aos="fade-up">About Me</h2>
         <p>
-          I am a motivated Full Stack Developer with a background in Computer
-          Science from Odesa Polytechnic National University. I specialize in
-          building responsive web interfaces using Next.js and React, backed by
-          robust server-side logic with PHP (Laravel) and Java (Spring Boot).
-          Unlike typical developers, I have a deep passion for UI/UX design,
-          ensuring that my applications are not only performant but also
-          visually engaging. I am fluent in Ukrainian and Russian, proficient in
-          English (B2), and speak Czech (B1-B2).
+          I am a motivated Frontend Developer and UI/UX Designer with a
+          background in Computer Science from Odesa Polytechnic National
+          University. I specialize in building responsive, high-quality web
+          applications using React and Next.js, with a strong focus on
+          pixel-perfect UI and user-centric design. My work bridges frontend
+          development and design, ensuring applications are not only performant
+          but also visually engaging.
         </p>
+
+        <div class="languages-badges">
+          <span class="badge">UA / RU (Native)</span>
+          <span class="badge">EN (B2)</span>
+          <span class="badge">CZ (B1-B2)</span>
+        </div>
+
+        <div class="interests-container" data-aos="fade-up">
+          <h3>Interests</h3>
+          <div class="interests-grid">
+            <div class="interest-item">
+              <i class="fas fa-camera"></i>
+              <span>Photography</span>
+            </div>
+            <div class="interest-item">
+              <i class="fas fa-headphones"></i>
+              <span>Music</span>
+            </div>
+            <div class="interest-item">
+              <i class="fas fa-tshirt"></i>
+              <span>Fashion</span>
+            </div>
+            <div class="interest-item">
+              <i class="fas fa-code"></i>
+              <span>Frontend</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="experience-section" id="experience">
+      <div class="container">
+        <h2 data-aos="fade-up">Experience</h2>
+        <div class="timeline">
+          <div class="timeline-item" data-aos="fade-right">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">August 2024 - Present</div>
+            <div class="timeline-content">
+              <h3>Freelance Frontend Developer & UI/UX Designer</h3>
+              <p class="timeline-location">Remote</p>
+              <ul>
+                <li>
+                  Managed end-to-end development of web projects, from UI/UX
+                  wireframing in Figma to final deployment on Vercel.
+                </li>
+                <li>
+                  Delivered custom web solutions focusing on scalable CSS
+                  architecture (BEM) and user-centric design.
+                </li>
+                <li>
+                  Optimized assets and code structure for fast loading speeds
+                  and smooth performance.
+                </li>
+              </ul>
+              <div class="skills-list">
+                <span>React</span>
+                <span>Next.js</span>
+                <span>Tailwind CSS</span>
+                <span>Figma</span>
+                <span>Vercel</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item" data-aos="fade-left">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">2022 - 2027 (Expected)</div>
+            <div class="timeline-content">
+              <h3>Bachelor of Computer Science</h3>
+              <p class="timeline-location">
+                Odesa Polytechnic National University
+              </p>
+              <p>
+                Deepening knowledge in Web Engineering, OOP, and Database
+                Architecture.
+              </p>
+              <div class="skills-list">
+                <span>Software Engineering</span>
+                <span>OOP</span>
+                <span>SQL (PostgreSQL)</span>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
     <section class="projects-section" id="projects">
@@ -110,9 +210,35 @@
 
           <div class="project-card" data-aos="zoom-in">
             <img
+              class="project-image"
+              src="images/academy.jpg"
+              alt="Kraus Academy Preview"
+              loading="lazy"
+            />
+            <h4>Kraus Academy (Interactive Learning Platform)</h4>
+            <p>
+              A high-end, responsive landing page for an online interior design
+              academy. Features a dynamic Hero slider with synchronized content
+              transitions, an interactive student reviews gallery with custom
+              drag-and-drop scrolling, and a fully functional lead generation
+              system. <br /><strong>Tech Stack:</strong> HTML5, CSS3 (BEM,
+              Scroll Snap), JavaScript (ES6+), Intersection Observer API.
+            </p>
+            <a
+              href="https://github.com/DariaSyanska/kraus-academy"
+              target="_blank"
+              ><button>
+                <i class="fab fa-github" aria-hidden="true"></i> View Code
+              </button></a
+            >
+          </div>
+
+          <div class="project-card" data-aos="zoom-in">
+            <img
+              class="project-image"
               src="images/tracker.jpg"
               alt="Finance Tracker Preview"
-              class="project-image"
+              loading="lazy"
             />
 
             <h4>Personal Finance Tracker (Full-Stack App)</h4>
@@ -126,15 +252,18 @@
               href="https://github.com/DariaSyanska/finance-tracker"
               target="_blank"
             >
-              <button><i class="fab fa-github"></i> View Code</button>
+              <button>
+                <i class="fab fa-github" aria-hidden="true"></i> View Code
+              </button>
             </a>
           </div>
 
           <div class="project-card" data-aos="zoom-in">
             <img
+              class="project-image"
               src="images/bakery.jpg"
               alt="Bakery Website Preview"
-              class="project-image"
+              loading="lazy"
             />
 
             <h4>Shop Bakery Landing Page</h4>
@@ -149,15 +278,18 @@
               href="https://github.com/DariaSyanska/genius-project"
               target="_blank"
             >
-              <button><i class="fab fa-github"></i> View Code</button>
+              <button>
+                <i class="fab fa-github" aria-hidden="true"></i> View Code
+              </button>
             </a>
           </div>
 
           <div class="project-card" data-aos="zoom-in">
             <img
+              class="project-image"
               src="images/hotel.jpg"
               alt="Loft Hotel Website Preview"
-              class="project-image"
+              loading="lazy"
             />
 
             <h4>Loft Hotel Website</h4>
@@ -172,7 +304,9 @@
               href="https://github.com/DariaSyanska/hotel-landing-page"
               target="_blank"
             >
-              <button><i class="fab fa-github"></i> View Code</button>
+              <button>
+                <i class="fab fa-github" aria-hidden="true"></i> View Code
+              </button>
             </a>
           </div>
 
@@ -180,9 +314,10 @@
 
           <div class="project-card" data-aos="zoom-in">
             <img
+              class="project-image"
               src="images/donuts.jpg"
               alt="Donuts 3D Animation Preview"
-              class="project-image"
+              loading="lazy"
             />
 
             <h4>Donuts 3D Animation</h4>
@@ -195,15 +330,18 @@
               href="https://www.figma.com/community/file/1566494230847296003/donuts-animation"
               target="_blank"
             >
-              <button><i class="fab fa-figma"></i> View Prototype</button>
+              <button>
+                <i class="fab fa-figma" aria-hidden="true"></i> View Prototype
+              </button>
             </a>
           </div>
 
           <div class="project-card" data-aos="zoom-in">
             <img
+              class="project-image"
               src="images/tutor.png"
               alt="Tutor Platform Redesign Preview"
-              class="project-image"
+              loading="lazy"
             />
 
             <h4>Tutor Platform Redesign</h4>
@@ -217,7 +355,9 @@
               href="https://www.figma.com/community/file/1570406108307612963/online-tutor-landing-page-ui-ux-design-prototype"
               target="_blank"
             >
-              <button><i class="fab fa-figma"></i> View Prototype</button>
+              <button>
+                <i class="fab fa-figma" aria-hidden="true"></i> View Prototype
+              </button>
             </a>
           </div>
         </div>
@@ -252,7 +392,7 @@
         <div class="contact-section_container">
           <div class="contact-section_form" data-aos="flip-left">
             <h2 data-aos="fade-up">Let's Work Together</h2>
-            <p>
+            <p class="contact-section-text">
               Open for full-time opportunities and interesting projects. Feel
               free to reach out!
             </p>
@@ -339,7 +479,7 @@
           <nav class="footer_nav">
             <div class="footer_logo">
               <a href="#">
-                <img src="./images/logo.png" alt="My Logo" />
+                <img src="./images/logo.png" alt="My Logo" loading="lazy" />
               </a>
             </div>
             <ul class="footer_menu">
@@ -379,23 +519,23 @@
                 <a
                   href="https://github.com/DariaSyanska"
                   target="_blank"
-                  aria-label="GitHub"
+                  aria-label="GitHub profile"
                 >
-                  <i class="fab fa-github"></i> GitHub
+                  <i class="fab fa-github" aria-hidden="true"></i> GitHub
                 </a>
                 <a
                   href="https://www.linkedin.com/in/daria-sianska/"
                   target="_blank"
-                  aria-label="LinkedIn"
+                  aria-label="LinkedIn profile"
                 >
-                  <i class="fab fa-linkedin"></i> LinkedIn
+                  <i class="fab fa-linkedin" aria-hidden="true"></i> LinkedIn
                 </a>
                 <a
                   href="https://www.behance.net/00ddb6e2"
                   target="_blank"
-                  aria-label="Behance"
+                  aria-label="Behance profile"
                 >
-                  <i class="fab fa-behance"></i> Behance
+                  <i class="fab fa-behance" aria-hidden="true"></i> Behance
                 </a>
               </div>
             </div>
@@ -418,9 +558,7 @@
     </button>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-
-    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
     <script src="js/script.js"></script>
   </body>
 </html>
