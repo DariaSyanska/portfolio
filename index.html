@@ -18,7 +18,7 @@
     />
     <meta
       property="og:image"
-      content="https://dariasianka.github.io/images/avatar.jpg"
+      content="https://dariasianka.github.io/images/avatar.webp"
     />
     <meta property="twitter:card" content="summary_large_image" />
     <meta
@@ -31,11 +31,11 @@
     />
     <meta
       property="twitter:image"
-      content="https://dariasianka.github.io/images/avatar.jpg"
+      content="https://dariasianka.github.io/images/avatar.webp"
     />
     <title>Daria Sianska | Full Stack Developer</title>
     <link rel="stylesheet" href="css/styles.css" />
-    <link rel="icon" type="image/png" href="./images/favicon.png" />
+    <link rel="icon" type="image/webp" href="./images/favicon.webp" />
     <link
       href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600&display=swap"
       rel="stylesheet"
@@ -57,7 +57,11 @@
         <div class="header_container">
           <nav class="header_nav">
             <a href="#home">
-              <img src="./images/logo.png" alt="My Logo" loading="lazy" />
+              <img
+                src="./images/logo.webp"
+                alt="Daria Sianska Portfolio Logo"
+                loading="lazy"
+              />
             </a>
             <ul class="header_menu">
               <li><a class="link" href="#about">About</a></li>
@@ -71,12 +75,15 @@
             <button id="theme-toggle" aria-label="Toggle theme">
               <i class="fa-solid fa-moon"></i>
             </button>
-            <a href="CV_Daria_Sianska.pdf" download class="btn-primary"
-              >Download Professional CV</a
-            >
-            <a href="images/cv.png" target="_blank" class="btn-secondary"
-              >View Creative Design</a
-            >
+            <a href="CV_Daria_Sianska.pdf" download class="btn-primary">
+              <span class="desktop-text">Download Professional CV</span>
+              <span class="mobile-text">Professional CV</span>
+            </a>
+
+            <a href="images/cv.webp" target="_blank" class="btn-secondary">
+              <span class="desktop-text">View Creative Design</span>
+              <span class="mobile-text">Creative CV</span>
+            </a>
           </div>
         </div>
       </div>
@@ -86,7 +93,7 @@
         <img
           id="hero-avatar"
           class="hero-avatar"
-          src="images/avatar-light.jpg"
+          src="images/avatar-light.webp"
           alt="Daria Sianska"
           loading="lazy"
         />
@@ -211,7 +218,7 @@
           <div class="project-card" data-aos="zoom-in">
             <img
               class="project-image"
-              src="images/academy.jpg"
+              src="images/academy.webp"
               alt="Kraus Academy Preview"
               loading="lazy"
             />
@@ -236,7 +243,7 @@
           <div class="project-card" data-aos="zoom-in">
             <img
               class="project-image"
-              src="images/tracker.jpg"
+              src="images/tracker.webp"
               alt="Finance Tracker Preview"
               loading="lazy"
             />
@@ -261,7 +268,7 @@
           <div class="project-card" data-aos="zoom-in">
             <img
               class="project-image"
-              src="images/bakery.jpg"
+              src="images/bakery.webp"
               alt="Bakery Website Preview"
               loading="lazy"
             />
@@ -287,7 +294,7 @@
           <div class="project-card" data-aos="zoom-in">
             <img
               class="project-image"
-              src="images/hotel.jpg"
+              src="images/hotel.webp"
               alt="Loft Hotel Website Preview"
               loading="lazy"
             />
@@ -315,7 +322,7 @@
           <div class="project-card" data-aos="zoom-in">
             <img
               class="project-image"
-              src="images/donuts.jpg"
+              src="images/donuts.webp"
               alt="Donuts 3D Animation Preview"
               loading="lazy"
             />
@@ -339,7 +346,7 @@
           <div class="project-card" data-aos="zoom-in">
             <img
               class="project-image"
-              src="images/tutor.png"
+              src="images/tutor.webp"
               alt="Tutor Platform Redesign Preview"
               loading="lazy"
             />
@@ -415,6 +422,7 @@
                   id="contact-user-name"
                   placeholder="Name"
                   required
+                  autocomplete="name"
                 />
               </div>
 
@@ -432,6 +440,7 @@
                   id="contact-user-tel"
                   placeholder="Phone number"
                   required
+                  autocomplete="tel"
                 />
               </div>
 
@@ -449,6 +458,7 @@
                   id="contact-user-email"
                   placeholder="E-mail"
                   required
+                  autocomplete="email"
                 />
               </div>
 
@@ -479,7 +489,7 @@
           <nav class="footer_nav">
             <div class="footer_logo">
               <a href="#">
-                <img src="./images/logo.png" alt="My Logo" loading="lazy" />
+                <img src="./images/logo.webp" alt="My Logo" loading="lazy" />
               </a>
             </div>
             <ul class="footer_menu">

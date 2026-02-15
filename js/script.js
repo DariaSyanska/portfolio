@@ -69,8 +69,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const themeIcon = themeToggleBtn.querySelector("i");
     const body = document.body;
 
-    const lightAvatar = "images/avatar-light.jpg";
-    const darkAvatar = "images/avatar-dark.jpg";
+    const lightAvatar = "images/avatar-light.webp";
+    const darkAvatar = "images/avatar-dark.webp";
 
     const updateAvatar = (isDark) => {
       avatarImg.style.opacity = "0";
