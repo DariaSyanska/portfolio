@@ -2,40 +2,77 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <title>Daria Sianska | Frontend Developer & UI/UX Designer</title>
     <meta
       name="description"
-      content="Portfolio of Daria Sianska, a Full Stack Developer & UI/UX Designer based in Prague. View my projects in Next.js, React, and Laravel."
+      content="Portfolio of Daria Sianska, Frontend Developer & UI/UX Designer based in Prague. React, Next.js, responsive websites and modern user interfaces."
     />
     <meta name="author" content="Daria Sianska" />
     <meta name="theme-color" content="#ec4899" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://dariasianka.github.io/" />
-    <meta property="og:title" content="Daria Sianska | Full Stack Developer" />
     <meta
-      property="og:description"
-      content="Portfolio of a Full Stack Developer & UI/UX Designer based in Prague. React, Next.js, Laravel."
+      property="og:image:alt"
+      content="Portfolio preview of Daria Sianska, Frontend Developer and UI/UX Designer"
+    />
+    <meta
+      name="twitter:image:alt"
+      content="Portfolio preview of Daria Sianska"
+    />
+    <meta
+      property="og:url"
+      content="https://dariasyanska.github.io/portfolio/"
     />
     <meta
       property="og:image"
-      content="https://dariasianka.github.io/images/avatar.webp"
+      content="https://dariasyanska.github.io/portfolio/images/preview.jpg"
     />
-    <meta property="twitter:card" content="summary_large_image" />
+    <meta name="twitter:card" content="summary_large_image" />
     <meta
-      property="twitter:title"
-      content="Daria Sianska | Full Stack Developer"
-    />
-    <meta
-      property="twitter:description"
-      content="Check out my portfolio: React, Next.js, and UI/UX Design."
+      property="og:title"
+      content="Daria Sianska | Frontend Developer & UI/UX Designer"
     />
     <meta
-      property="twitter:image"
-      content="https://dariasianka.github.io/images/avatar.webp"
+      property="og:description"
+      content="Portfolio of Daria Sianska, Frontend Developer & UI/UX Designer based in Prague. React, Next.js, responsive websites and modern user interfaces."
     />
-    <title>Daria Sianska | Full Stack Developer</title>
+    <meta
+      name="twitter:title"
+      content="Daria Sianska | Frontend Developer & UI/UX Designer"
+    />
+    <meta
+      name="twitter:description"
+      content="Portfolio of Daria Sianska: React, Next.js, responsive websites and UI/UX design."
+    />
+    <meta
+      name="twitter:image"
+      content="https://dariasyanska.github.io/portfolio/images/preview.jpg"
+    />
+
     <link rel="stylesheet" href="css/styles.css" />
+    <link rel="canonical" href="https://dariasyanska.github.io/portfolio/" />
     <link rel="icon" type="image/webp" href="./images/favicon.webp" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+
+        "@type": "Person",
+
+        "name": "Daria Sianska",
+
+        "jobTitle": "Frontend Developer",
+
+        "url": "https://dariasyanska.github.io/portfolio/",
+
+        "sameAs": [
+          "https://github.com/DariaSyanska",
+
+          "https://www.linkedin.com/in/daria-sianska/"
+        ]
+      }
+    </script>
+
     <link
       href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600&display=swap"
       rel="stylesheet"
@@ -55,7 +92,7 @@
     <header class="header">
       <div class="container">
         <div class="header_container">
-          <nav class="header_nav">
+          <nav class="header_nav" aria-label="Main navigation">
             <a href="#home">
               <img
                 src="./images/logo.webp"
@@ -65,30 +102,36 @@
             </a>
             <ul class="header_menu">
               <li><a class="link" href="#about">About</a></li>
+              <li><a class="link" href="#experience">Experience</a></li>
               <li><a class="link" href="#projects">Projects</a></li>
+              <li><a class="link" href="#benefits">Benefits</a></li>
               <li><a class="link" href="#skills">Skills</a></li>
               <li><a class="link" href="#contact">Contact</a></li>
             </ul>
           </nav>
 
           <div class="header_actions">
-            <button id="theme-toggle" aria-label="Toggle theme">
+            <button
+              id="theme-toggle"
+              aria-label="Toggle theme"
+              aria-pressed="false"
+              title="Toggle theme"
+            >
               <i class="fa-solid fa-moon"></i>
             </button>
+
             <a href="CV_Daria_Sianska.pdf" download class="btn-primary">
               <span class="desktop-text">Download Professional CV</span>
               <span class="mobile-text">Professional CV</span>
             </a>
 
-            <a href="images/cv.webp" target="_blank" class="btn-secondary">
-              <span class="desktop-text">View Creative Design</span>
-              <span class="mobile-text">Creative CV</span>
-            </a>
+            <a href="hire-me.html" class="btn-secondary">Hire Me</a>
           </div>
         </div>
       </div>
     </header>
-    <section class="hero-section">
+
+    <section class="hero-section" id="home">
       <div class="container">
         <img
           id="hero-avatar"
@@ -97,17 +140,43 @@
           alt="Daria Sianska"
           loading="lazy"
         />
-        <h1>Welcome to My Website</h1>
-        <h2 data-aos="fade-up">
-          Hi, I'm Daria Sianska. <span class="typed-text"></span>
+
+        <h1 class="hero-title">Welcome to My Creative Portfolio</h1>
+
+        <h2 class="hero-subtitle" data-aos="fade-up">
+          Hi, I'm <span class="hero-name">Daria Sianska</span><br />
+          <span class="typed-text"></span>
         </h2>
-        <p>
-          Building functional, responsive web applications with a keen eye for
-          design and user experience. Based in Prague, Czechia.
+
+        <p class="hero-description">
+          Frontend Developer focused on responsive interfaces, modern UI, and
+          clean user experience for business websites and web apps.
         </p>
+
+        <ul class="hero-points">
+          <li>React / Next.js</li>
+          <li>UI/UX + Frontend</li>
+          <li>Responsive Web Apps</li>
+        </ul>
+
+        <p class="hero-trust">
+          Available for freelance & full-time • Based in Prague
+        </p>
+
         <div class="hero-buttons">
-          <a href="#projects" class="btn-primary">View My Projects</a>
-          <a href="#contact" class="btn-secondary">Contact Me</a>
+          <a href="#projects" class="btn-primary">View Projects</a>
+          <a href="#contact" class="btn-secondary">Hire Me</a>
+        </div>
+      </div>
+    </section>
+    <section class="summary-section">
+      <div class="container">
+        <div class="summary-grid">
+          <div><strong>Frontend:</strong> React, Next.js, JavaScript</div>
+          <div>
+            <strong>UI/UX:</strong> Figma, responsive design, wireframes
+          </div>
+          <div><strong>Backend:</strong> Laravel, Spring Boot, PostgreSQL</div>
         </div>
       </div>
     </section>
@@ -115,13 +184,16 @@
       <div class="container">
         <h2 data-aos="fade-up">About Me</h2>
         <p>
-          I am a motivated Frontend Developer and UI/UX Designer with a
-          background in Computer Science from Odesa Polytechnic National
-          University. I specialize in building responsive, high-quality web
-          applications using React and Next.js, with a strong focus on
-          pixel-perfect UI and user-centric design. My work bridges frontend
-          development and design, ensuring applications are not only performant
-          but also visually engaging.
+          I’m a Frontend Developer and UI/UX Designer who enjoys building
+          interfaces that are both visually polished and practical to use. I
+          work with React, Next.js, JavaScript, and modern CSS, and I pay close
+          attention to responsive behavior, clean structure, and user
+          experience.
+        </p>
+        <p>
+          My background in Computer Science helps me approach projects not only
+          from a design perspective, but also from a technical and
+          problem-solving angle.
         </p>
 
         <div class="languages-badges">
@@ -212,35 +284,80 @@
     <section class="projects-section" id="projects">
       <div class="container">
         <h2 data-aos="fade-up">Projects</h2>
+
         <div class="projects-section_container">
           <h3>Development</h3>
 
-          <div class="project-card" data-aos="zoom-in">
+          <article class="project-card" data-aos="zoom-in">
             <img
               class="project-image"
               src="images/academy.webp"
               alt="Kraus Academy Preview"
               loading="lazy"
             />
-            <h4>Kraus Academy (Interactive Learning Platform)</h4>
-            <p>
-              A high-end, responsive landing page for an online interior design
-              academy. Features a dynamic Hero slider with synchronized content
-              transitions, an interactive student reviews gallery with custom
-              drag-and-drop scrolling, and a fully functional lead generation
-              system. <br /><strong>Tech Stack:</strong> HTML5, CSS3 (BEM,
-              Scroll Snap), JavaScript (ES6+), Intersection Observer API.
-            </p>
-            <a
-              href="https://github.com/DariaSyanska/kraus-academy"
-              target="_blank"
-              ><button>
-                <i class="fab fa-github" aria-hidden="true"></i> View Code
-              </button></a
-            >
-          </div>
 
-          <div class="project-card" data-aos="zoom-in">
+            <div class="project-content">
+              <h4>Kraus Academy</h4>
+
+              <div class="project-badges">
+                <span class="project-badge" data-type="frontend">Frontend</span>
+                <span class="project-badge" data-type="ui">UI/UX</span>
+                <span class="project-badge" data-type="advanced">Advanced</span>
+              </div>
+
+              <p class="project-description">
+                Responsive landing page for an online interior design academy
+                with a strong focus on visual storytelling, smooth interaction,
+                and lead generation.
+              </p>
+
+              <ul class="project-highlights">
+                <li>
+                  Built a dynamic hero slider with synchronized content
+                  transitions
+                </li>
+                <li>Created an interactive student reviews gallery</li>
+                <li>Structured the page for stronger conversion flow</li>
+              </ul>
+
+              <p class="project-result">
+                <strong>Impact:</strong> Improved engagement through interactive
+                UI and a conversion-focused layout.
+              </p>
+
+              <p class="project-stack">
+                <strong>Tech Stack:</strong> HTML5, CSS3 (BEM, Scroll Snap),
+                JavaScript (ES6+), Intersection Observer API
+              </p>
+
+              <div class="project-actions">
+                <a
+                  class="project-link-btn"
+                  href="https://dariasyanska.github.io/kraus-academy/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i
+                    class="fas fa-arrow-up-right-from-square"
+                    aria-hidden="true"
+                  ></i>
+                  <span>Live Demo</span>
+                </a>
+
+                <a
+                  class="project-link-btn"
+                  href="https://github.com/DariaSyanska/kraus-academy"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i class="fab fa-github" aria-hidden="true"></i>
+                  <span>View Code</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card" data-aos="zoom-in">
             <img
               class="project-image"
               src="images/tracker.webp"
@@ -248,24 +365,52 @@
               loading="lazy"
             />
 
-            <h4>Personal Finance Tracker (Full-Stack App)</h4>
-            <p>
-              Full-Stack Web Application for managing personal finances.
-              Features secure data storage, transaction categorization, and
-              visualization of financial status.
-              <br /><strong>Tech Stack:</strong> React.js, Node.js, PostgreSQL.
-            </p>
-            <a
-              href="https://github.com/DariaSyanska/finance-tracker"
-              target="_blank"
-            >
-              <button>
-                <i class="fab fa-github" aria-hidden="true"></i> View Code
-              </button>
-            </a>
-          </div>
+            <div class="project-content">
+              <h4>Personal Finance Tracker</h4>
 
-          <div class="project-card" data-aos="zoom-in">
+              <div class="project-badges">
+                <span class="project-badge" data-type="fullstack"
+                  >Full-Stack</span
+                >
+                <span class="project-badge" data-type="react">React</span>
+                <span class="project-badge" data-type="backend">Backend</span>
+              </div>
+
+              <p class="project-description">
+                Full-stack web application for personal finance management with
+                a clean interface for tracking income, expenses, and categories.
+              </p>
+
+              <ul class="project-highlights">
+                <li>Structured transaction and category management</li>
+                <li>Built a practical interface for financial overview</li>
+                <li>Focused on usability and data clarity</li>
+              </ul>
+
+              <p class="project-result">
+                <strong>Impact:</strong> Created a user-friendly system for
+                managing personal financial data in one place.
+              </p>
+
+              <p class="project-stack">
+                <strong>Tech Stack:</strong> React.js, Node.js, PostgreSQL
+              </p>
+
+              <div class="project-actions">
+                <a
+                  class="project-link-btn"
+                  href="https://github.com/DariaSyanska/finance-tracker"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i class="fab fa-github" aria-hidden="true"></i>
+                  <span>View Code</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card" data-aos="zoom-in">
             <img
               class="project-image"
               src="images/bakery.webp"
@@ -273,25 +418,64 @@
               loading="lazy"
             />
 
-            <h4>Shop Bakery Landing Page</h4>
-            <p>
-              Responsive Front-End Development. A mobile-first landing page for
-              a modern bakery chain. Built with semantic HTML5 and maintainable
-              SCSS architecture (BEM methodology).
-              <br /><strong>Tech Stack:</strong> HTML5, SCSS, JavaScript,
-              Vercel.
-            </p>
-            <a
-              href="https://github.com/DariaSyanska/genius-project"
-              target="_blank"
-            >
-              <button>
-                <i class="fab fa-github" aria-hidden="true"></i> View Code
-              </button>
-            </a>
-          </div>
+            <div class="project-content">
+              <h4>Shop Bakery Landing Page</h4>
 
-          <div class="project-card" data-aos="zoom-in">
+              <div class="project-badges">
+                <span class="project-badge" data-type="frontend">Frontend</span>
+                <span class="project-badge" data-type="responsive"
+                  >Responsive</span
+                >
+              </div>
+
+              <p class="project-description">
+                Mobile-first landing page for a modern bakery brand with clean
+                structure, visual hierarchy, and polished responsive behavior.
+              </p>
+
+              <ul class="project-highlights">
+                <li>Built reusable layout sections</li>
+                <li>Used maintainable SCSS architecture</li>
+                <li>Optimized the layout for different screen sizes</li>
+              </ul>
+
+              <p class="project-result">
+                <strong>Impact:</strong> Delivered a responsive promotional
+                website with improved readability and usability across devices.
+              </p>
+
+              <p class="project-stack">
+                <strong>Tech Stack:</strong> HTML5, SCSS, JavaScript, Vercel
+              </p>
+
+              <div class="project-actions">
+                <a
+                  class="project-link-btn"
+                  href="https://dariasyanska.github.io/genius-project/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i
+                    class="fas fa-arrow-up-right-from-square"
+                    aria-hidden="true"
+                  ></i>
+                  <span>Live Demo</span>
+                </a>
+
+                <a
+                  class="project-link-btn"
+                  href="https://github.com/DariaSyanska/genius-project"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i class="fab fa-github" aria-hidden="true"></i>
+                  <span>View Code</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card" data-aos="zoom-in">
             <img
               class="project-image"
               src="images/hotel.webp"
@@ -299,27 +483,64 @@
               loading="lazy"
             />
 
-            <h4>Loft Hotel Website</h4>
-            <p>
-              Responsive UI Implementation. A hotel website featuring Hero,
-              Services, and Booking sections. Focused on responsive layout and
-              clean typography.
-              <br /><strong>Tech Stack:</strong> HTML5, Tailwind CSS,
-              JavaScript.
-            </p>
-            <a
-              href="https://github.com/DariaSyanska/hotel-landing-page"
-              target="_blank"
-            >
-              <button>
-                <i class="fab fa-github" aria-hidden="true"></i> View Code
-              </button>
-            </a>
-          </div>
+            <div class="project-content">
+              <h4>Loft Hotel Website</h4>
+
+              <div class="project-badges">
+                <span class="project-badge" data-type="frontend">Frontend</span>
+                <span class="project-badge" data-type="tailwind">Tailwind</span>
+              </div>
+
+              <p class="project-description">
+                Responsive hotel website concept featuring hero, services, and
+                booking sections with clean UI and adaptive layout.
+              </p>
+
+              <ul class="project-highlights">
+                <li>Implemented responsive page structure</li>
+                <li>Focused on spacing, hierarchy, and readability</li>
+                <li>Designed for smooth browsing on desktop and mobile</li>
+              </ul>
+
+              <p class="project-result">
+                <strong>Impact:</strong> Delivered a visually clear hospitality
+                interface with a strong focus on usability.
+              </p>
+
+              <p class="project-stack">
+                <strong>Tech Stack:</strong> HTML5, Tailwind CSS, JavaScript
+              </p>
+
+              <div class="project-actions">
+                <a
+                  class="project-link-btn"
+                  href="https://dariasyanska.github.io/hotel-landing-page/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i
+                    class="fas fa-arrow-up-right-from-square"
+                    aria-hidden="true"
+                  ></i>
+                  <span>Live Demo</span>
+                </a>
+
+                <a
+                  class="project-link-btn"
+                  href="https://github.com/DariaSyanska/hotel-landing-page"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i class="fab fa-github" aria-hidden="true"></i>
+                  <span>View Code</span>
+                </a>
+              </div>
+            </div>
+          </article>
 
           <h3>UI/UX Design</h3>
 
-          <div class="project-card" data-aos="zoom-in">
+          <article class="project-card" data-aos="zoom-in">
             <img
               class="project-image"
               src="images/donuts.webp"
@@ -327,23 +548,52 @@
               loading="lazy"
             />
 
-            <h4>Donuts 3D Animation</h4>
-            <p>
-              Interactive Prototyping. Advanced Figma prototype showcasing
-              realistic 3D-rotation effects using Smart Animate.
-              <br /><strong>Tools:</strong> Figma, Smart Animate.
-            </p>
-            <a
-              href="https://www.figma.com/community/file/1566494230847296003/donuts-animation"
-              target="_blank"
-            >
-              <button>
-                <i class="fab fa-figma" aria-hidden="true"></i> View Prototype
-              </button>
-            </a>
-          </div>
+            <div class="project-content">
+              <h4>Donuts 3D Animation</h4>
 
-          <div class="project-card" data-aos="zoom-in">
+              <div class="project-badges">
+                <span class="project-badge" data-type="ui">UI/UX</span>
+                <span class="project-badge" data-type="animation"
+                  >Animation</span
+                >
+              </div>
+
+              <p class="project-description">
+                Interactive Figma prototype exploring motion design and 3D-like
+                transitions using Smart Animate.
+              </p>
+
+              <ul class="project-highlights">
+                <li>Simulated rotation and depth effects</li>
+                <li>Focused on smooth micro-interactions</li>
+                <li>Explored visual storytelling through motion</li>
+              </ul>
+
+              <p class="project-result">
+                <strong>Impact:</strong> Demonstrated strong motion design
+                skills and the ability to create engaging interactive
+                prototypes.
+              </p>
+
+              <p class="project-stack">
+                <strong>Tools:</strong> Figma, Smart Animate
+              </p>
+
+              <div class="project-actions">
+                <a
+                  class="project-link-btn"
+                  href="https://www.figma.com/community/file/1566494230847296003/donuts-animation"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i class="fab fa-figma" aria-hidden="true"></i>
+                  <span>View Prototype</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card" data-aos="zoom-in">
             <img
               class="project-image"
               src="images/tutor.webp"
@@ -351,22 +601,77 @@
               loading="lazy"
             />
 
-            <h4>Tutor Platform Redesign</h4>
+            <div class="project-content">
+              <h4>Tutor Platform Redesign</h4>
+
+              <div class="project-badges">
+                <span class="project-badge" data-type="ui">UI/UX</span>
+                <span class="project-badge" data-type="design">Redesign</span>
+              </div>
+
+              <p class="project-description">
+                UI/UX redesign concept for an online tutoring platform with a
+                focus on clarity, trust, and stronger conversion flow.
+              </p>
+
+              <ul class="project-highlights">
+                <li>Improved visual hierarchy</li>
+                <li>Made the landing page structure more intuitive</li>
+                <li>Strengthened trust and social proof blocks</li>
+              </ul>
+
+              <p class="project-result">
+                <strong>Impact:</strong> Produced a cleaner and more
+                conversion-oriented interface with better usability.
+              </p>
+
+              <p class="project-stack">
+                <strong>Tools:</strong> Figma, UI/UX Principles
+              </p>
+
+              <div class="project-actions">
+                <a
+                  class="project-link-btn"
+                  href="https://www.figma.com/community/file/1570406108307612963/online-tutor-landing-page-ui-ux-design-prototype"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i class="fab fa-figma" aria-hidden="true"></i>
+                  <span>View Prototype</span>
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+    <section class="benefits-section" id="benefits">
+      <div class="container">
+        <h2>Why Work With Me</h2>
+        <div class="benefits-grid">
+          <article class="benefit-card">
+            <h3>Design + Frontend</h3>
             <p>
-              EdTech Landing Page Concept. A UI/UX redesign for an online
-              tutoring service focused on trust, social proof, and clear
-              conversion paths.
-              <br /><strong>Tools:</strong> Figma, UI/UX Principles.
+              I combine UI thinking and frontend implementation, so interfaces
+              look polished and work smoothly.
             </p>
-            <a
-              href="https://www.figma.com/community/file/1570406108307612963/online-tutor-landing-page-ui-ux-design-prototype"
-              target="_blank"
-            >
-              <button>
-                <i class="fab fa-figma" aria-hidden="true"></i> View Prototype
-              </button>
-            </a>
-          </div>
+          </article>
+
+          <article class="benefit-card">
+            <h3>Responsive by Default</h3>
+            <p>
+              I build layouts that work across desktop, tablet, and mobile
+              without breaking usability.
+            </p>
+          </article>
+
+          <article class="benefit-card">
+            <h3>Clear Communication</h3>
+            <p>
+              I keep project communication structured, transparent, and focused
+              on delivery.
+            </p>
+          </article>
         </div>
       </div>
     </section>
@@ -399,10 +704,7 @@
         <div class="contact-section_container">
           <div class="contact-section_form" data-aos="flip-left">
             <h2 data-aos="fade-up">Let's Work Together</h2>
-            <p class="contact-section-text">
-              Open for full-time opportunities and interesting projects. Feel
-              free to reach out!
-            </p>
+            <p class="contact-note">Usually reply within 1–2 business days.</p>
             <form
               action="https://formspree.io/f/xlgdzklp"
               method="POST"
@@ -462,18 +764,55 @@
                 />
               </div>
 
+              <div class="contact-section_form-field input">
+                <label
+                  class="input_label visually-hidden"
+                  for="contact-user-message"
+                >
+                  Message
+                </label>
+                <textarea
+                  class="input_control"
+                  name="message"
+                  id="contact-user-message"
+                  placeholder="Tell me about your project"
+                  rows="5"
+                  required
+                ></textarea>
+              </div>
+
+              <div class="form-terms consent-field">
+                <label for="contact-consent">
+                  <input
+                    type="checkbox"
+                    name="consent"
+                    id="contact-consent"
+                    required
+                  />
+                  <span>
+                    I agree to the
+                    <a
+                      href="privacy.html"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="form-terms_link"
+                    >
+                      Privacy Policy
+                    </a>
+                  </span>
+                </label>
+                <p class="form-error" id="consent-error" aria-live="polite"></p>
+              </div>
+
               <button class="contact-section_button" type="submit">
-                Order a call
+                Send Message
               </button>
-              <p class="form-terms">
-                By clicking the button I agree to the
-                <a class="form-terms_link" href="#"> privacy policy </a>
-              </p>
             </form>
           </div>
         </div>
       </div>
       <iframe
+        title="Map showing Prague, Czechia"
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d163935.9148419665!2d14.300620888291778!3d50.05963876008801!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470b939c0970798b%3A0x400af0f66164090!2sPrague%2C%20Czechia!5e0!3m2!1sen!2sua!4v1700000000000!5m2!1sen!2sua"
         width="100%"
         height="100%"
@@ -483,20 +822,22 @@
         referrerpolicy="no-referrer-when-downgrade"
       ></iframe>
     </section>
+
     <footer class="footer">
       <div class="container">
         <div class="footer_container">
-          <nav class="footer_nav">
+          <nav class="footer_nav" aria-label="Footer navigation">
             <div class="footer_logo">
-              <a href="#">
+              <a href="#home">
                 <img src="./images/logo.webp" alt="My Logo" loading="lazy" />
               </a>
             </div>
             <ul class="footer_menu">
-              <li><a class="link" href="#">About</a></li>
-              <li><a class="link" href="#">Projects</a></li>
-              <li><a class="link" href="#">Skills</a></li>
-              <li><a class="link" href="#">Contact</a></li>
+              <li><a class="link" href="#about">About</a></li>
+              <li><a class="link" href="#experience">Experience</a></li>
+              <li><a class="link" href="#projects">Projects</a></li>
+              <li><a class="link" href="#skills">Skills</a></li>
+              <li><a class="link" href="#contact">Contact</a></li>
             </ul>
           </nav>
           <address class="footer_address">
@@ -519,6 +860,7 @@
                   <a
                     class="footer_address-link"
                     href="https://maps.app.goo.gl/Bjd5rcHUu4h82pQM7"
+                    rel="noopener noreferrer"
                     target="_blank"
                   >
                     Prague, Czechia
@@ -529,6 +871,7 @@
                 <a
                   href="https://github.com/DariaSyanska"
                   target="_blank"
+                  rel="noopener noreferrer"
                   aria-label="GitHub profile"
                 >
                   <i class="fab fa-github" aria-hidden="true"></i> GitHub
@@ -536,6 +879,7 @@
                 <a
                   href="https://www.linkedin.com/in/daria-sianska/"
                   target="_blank"
+                  rel="noopener noreferrer"
                   aria-label="LinkedIn profile"
                 >
                   <i class="fab fa-linkedin" aria-hidden="true"></i> LinkedIn
@@ -543,6 +887,7 @@
                 <a
                   href="https://www.behance.net/00ddb6e2"
                   target="_blank"
+                  rel="noopener noreferrer"
                   aria-label="Behance profile"
                 >
                   <i class="fab fa-behance" aria-hidden="true"></i> Behance
@@ -551,11 +896,19 @@
             </div>
 
             <div class="footer_address-info">
-              <a class="footer_address-link" href="#" target="_blank">
+              <a class="footer_address-link" href="terms.html">
+                Terms of Service
+              </a>
+              <a class="footer_address-link" href="privacy.html">
                 Privacy Policy
               </a>
-              <p class="footer_address-copyright" id="copyright">
-                &copy; Daria Sianska. All rights reserved.
+              <a class="footer_address-link" href="hire-me.html">Hire Me</a>
+              <a class="footer_address-link" href="contract.html">
+                Service Agreement
+              </a>
+              <p class="footer_address-copyright" id="copyright"></p>
+              <p class="footer-mini-text">
+                Frontend Developer & UI/UX Designer based in Prague.
               </p>
             </div>
           </address>
@@ -567,8 +920,27 @@
       <i class="fas fa-arrow-up"></i>
     </button>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-    <script src="js/script.js"></script>
+    <div class="cookie-banner" id="cookieBanner" hidden>
+      <div class="cookie-banner__content">
+        <p class="cookie-banner__text">
+          This website stores your preferences, such as theme and cookie
+          consent, to improve your experience. Read more in the
+          <a href="privacy.html#cookies">Privacy Policy</a>.
+        </p>
+
+        <div class="cookie-banner__actions">
+          <button type="button" class="btn-secondary" id="cookieDecline">
+            Decline
+          </button>
+          <button type="button" class="btn-primary" id="cookieAccept">
+            Accept
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12" defer></script>
+    <script src="js/script.js" defer></script>
   </body>
 </html>

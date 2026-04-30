@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta robots="noindex" />
+    <meta name="robots" content="noindex, nofollow" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Message Sent | Daria Sianska</title>
 
@@ -28,8 +28,13 @@
           </nav>
 
           <div class="header_actions">
-            <button id="theme-toggle" aria-label="Toggle Dark Mode">
-              <i class="fas fa-moon"></i>
+            <button
+              id="theme-toggle"
+              aria-label="Toggle theme"
+              aria-pressed="false"
+              title="Toggle theme"
+            >
+              <i class="fa-solid fa-moon"></i>
             </button>
           </div>
         </div>
@@ -54,8 +59,6 @@
       </div>
     </section>
 
-    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="js/script.js"></script>
   </body>
 </html>

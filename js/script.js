@@ -12,43 +12,51 @@ document.addEventListener("DOMContentLoaded", () => {
   /* =========================================
    2. Scroll To Top Button Logic
    ========================================= */
-  const mybutton = document.getElementById("scrollToTopBtn");
-  if (mybutton) {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-        }
-      });
+  const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+
+  if (scrollToTopBtn) {
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 300) {
+        scrollToTopBtn.style.display = "block";
+      } else {
+        scrollToTopBtn.style.display = "none";
+      }
     });
 
-    document.querySelectorAll(".fade-in").forEach((el) => observer.observe(el));
+    scrollToTopBtn.addEventListener("click", () => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    });
   }
 
   /* =========================================
      3. Active Navigation Link on Scroll
      ========================================= */
-  const sections = document.querySelectorAll("section");
+  const sections = document.querySelectorAll("section[id]");
   const navLinks = document.querySelectorAll(".header_menu li a");
 
   function updateActiveLink() {
     let current = "";
+
     sections.forEach((section) => {
       const sectionTop = section.offsetTop;
-      if (scrollY >= sectionTop - 200) {
+      if (window.scrollY >= sectionTop - 200) {
         current = section.getAttribute("id");
       }
     });
 
     navLinks.forEach((a) => {
       a.classList.remove("active");
-      if (a.getAttribute("href").includes(current)) {
+      if (a.getAttribute("href") === `#${current}`) {
         a.classList.add("active");
       }
     });
   }
 
   window.addEventListener("scroll", updateActiveLink);
+  updateActiveLink();
 
   /* =========================================
      4. Auto-Update Copyright Year
@@ -65,39 +73,45 @@ document.addEventListener("DOMContentLoaded", () => {
   const themeToggleBtn = document.getElementById("theme-toggle");
   const avatarImg = document.getElementById("hero-avatar");
 
-  if (themeToggleBtn && avatarImg) {
+  if (themeToggleBtn) {
     const themeIcon = themeToggleBtn.querySelector("i");
     const body = document.body;
 
-    const lightAvatar = "images/avatar-light.webp";
-    const darkAvatar = "images/avatar-dark.webp";
-
     const updateAvatar = (isDark) => {
+      if (!avatarImg) return;
       avatarImg.style.opacity = "0";
       setTimeout(() => {
-        avatarImg.src = isDark ? darkAvatar : lightAvatar;
+        avatarImg.src = isDark
+          ? "images/avatar-dark.webp"
+          : "images/avatar-light.webp";
         avatarImg.style.opacity = "1";
       }, 200);
     };
 
     const savedTheme = localStorage.getItem("theme");
-    if (savedTheme === "dark") {
+    const isDarkInitially = savedTheme === "dark";
+
+    if (isDarkInitially) {
       body.classList.add("dark-theme");
-      themeIcon.classList.replace("fa-moon", "fa-sun");
-      avatarImg.src = darkAvatar;
+      if (themeIcon) themeIcon.classList.replace("fa-moon", "fa-sun");
+      if (avatarImg) avatarImg.src = "images/avatar-dark.webp";
     }
+
+    themeToggleBtn.setAttribute("aria-pressed", String(isDarkInitially));
 
     themeToggleBtn.addEventListener("click", () => {
       const isDark = body.classList.toggle("dark-theme");
+      localStorage.setItem("theme", isDark ? "dark" : "light");
 
-      if (isDark) {
-        themeIcon.classList.replace("fa-moon", "fa-sun");
-        localStorage.setItem("theme", "dark");
-      } else {
-        themeIcon.classList.replace("fa-sun", "fa-moon");
-        localStorage.setItem("theme", "light");
+      if (themeIcon) {
+        if (isDark) {
+          themeIcon.classList.replace("fa-moon", "fa-sun");
+        } else {
+          themeIcon.classList.replace("fa-sun", "fa-moon");
+        }
       }
 
+      themeToggleBtn.setAttribute("aria-pressed", String(isDark));
       updateAvatar(isDark);
     });
   }
@@ -106,19 +120,20 @@ document.addEventListener("DOMContentLoaded", () => {
      6. Typewriter Effect (Typed.js)
      ========================================= */
   const typedElement = document.querySelector(".typed-text");
+
   if (typedElement && typeof Typed !== "undefined") {
     new Typed(".typed-text", {
       strings: [
-        "Full Stack Developer.",
-        "UI/UX Designer.",
-        "Problem Solver.",
-        "Based in Prague.",
+        '<span class="typed-gradient">Full Stack Developer.</span>',
+        '<span class="typed-gradient">UI/UX Designer.</span>',
+        '<span class="typed-gradient">Problem Solver.</span>',
       ],
       typeSpeed: 50,
       backSpeed: 30,
       backDelay: 2000,
       loop: true,
       cursorChar: "|",
+      contentType: "html",
     });
   }
 
@@ -127,10 +142,40 @@ document.addEventListener("DOMContentLoaded", () => {
      ========================================= */
   const contactForm = document.getElementById("contactForm");
   if (contactForm) {
+    const consentCheckbox = document.getElementById("contact-consent");
+    const consentError = document.getElementById("consent-error");
+    const consentField = consentCheckbox?.closest(".consent-field");
+
+    const clearConsentError = () => {
+      if (consentError) consentError.textContent = "";
+      if (consentField) consentField.classList.remove("has-error");
+    };
+
+    const showConsentError = () => {
+      if (consentError) {
+        consentError.textContent =
+          "Please accept the Privacy Policy before submitting the form.";
+      }
+      if (consentField) consentField.classList.add("has-error");
+    };
+
+    consentCheckbox?.addEventListener("change", () => {
+      if (consentCheckbox.checked) clearConsentError();
+    });
+
     contactForm.addEventListener("submit", async function (event) {
       event.preventDefault();
 
+      if (!consentCheckbox || !consentCheckbox.checked) {
+        showConsentError();
+        consentCheckbox?.focus();
+        return;
+      }
+
+      clearConsentError();
+
       const submitBtn = contactForm.querySelector(".contact-section_button");
+      if (!submitBtn) return;
       const originalText = submitBtn.innerText;
 
       submitBtn.innerText = "Sending...";
@@ -142,13 +187,12 @@ document.addEventListener("DOMContentLoaded", () => {
         const response = await fetch(contactForm.action, {
           method: "POST",
           body: formData,
-          headers: {
-            Accept: "application/json",
-          },
+          headers: { Accept: "application/json" },
         });
 
         if (response.ok) {
           contactForm.reset();
+          clearConsentError();
           window.location.href = "success.html";
         } else {
           alert("Oops! There was a problem submitting your form");
@@ -160,6 +204,40 @@ document.addEventListener("DOMContentLoaded", () => {
         submitBtn.innerText = originalText;
         submitBtn.disabled = false;
       }
+    });
+  }
+
+  /* =========================================
+   8. Cookie Banner
+   ========================================= */
+  const cookieBanner = document.getElementById("cookieBanner");
+  const cookieAccept = document.getElementById("cookieAccept");
+  const cookieDecline = document.getElementById("cookieDecline");
+
+  if (cookieBanner && cookieAccept && cookieDecline) {
+    if (!localStorage.getItem("cookie-consent")) {
+      cookieBanner.style.display = "flex";
+    }
+
+    cookieAccept.onclick = () => {
+      localStorage.setItem("cookie-consent", "accepted");
+      cookieBanner.style.display = "none";
+    };
+
+    cookieDecline.onclick = () => {
+      localStorage.setItem("cookie-consent", "declined");
+      cookieBanner.style.display = "none";
+    };
+  }
+
+  /* =========================================
+   9. Contract Print / PDF
+   ========================================= */
+  const printContractBtn = document.getElementById("printContractBtn");
+
+  if (printContractBtn) {
+    printContractBtn.addEventListener("click", () => {
+      window.print();
     });
   }
 });
