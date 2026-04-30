@@ -4,11 +4,12 @@
 [![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/HTML)
 [![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
 [![JavaScript](https://img.shields.io/badge/javascript-%23F7DF1E.svg?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
-![Portfolio Preview](./images/preview.jpg)
+
+[![Portfolio Preview](./images/preview.jpg)](https://dariasyanska.github.io/portfolio/)
 
 ## ✨ About the Project
 
-This is my personal portfolio website showcasing my work as a **Frontend Developer** with a strong focus on **UI/UX design**.
+This is my personal portfolio website showcasing my work as a **Frontend Developer**, with a strong focus on **UI/UX design** and modern web interfaces.
 
 The goal of this project is to combine clean code, modern interface design, and smooth user experience — aligned with real-world product standards.
 
@@ -56,7 +57,20 @@ The goal of this project is to combine clean code, modern interface design, and 
 - Strong understanding of UI/UX and visual hierarchy  
 - Clean and maintainable CSS architecture (BEM)  
 - Implementation of interactive and dynamic UI features  
-- Focus on performance and accessibility  
+- Strong focus on performance and accessibility
+
+---
+
+## 🔗 Live Demo
+
+[🌐 View Live Portfolio](https://dariasyanska.github.io/portfolio/)
+
+---
+
+## 📬 Contact
+
+- 💼 LinkedIn: https://www.linkedin.com/in/daria-sianska/
+- 📩 Email: [daria.syanska@gmail.com](mailto:daria.syanska@gmail.com)
 
 ---
 
