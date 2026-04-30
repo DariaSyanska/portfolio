@@ -1,5 +1,6 @@
 # 🌟 Personal Portfolio — Daria Sianska
 
+![Portfolio Preview](./images/preview.jpg)
 [![Live Demo](https://img.shields.io/badge/LIVE_DEMO-FF69B4?style=for-the-badge&logo=google-chrome&logoColor=white)](https://dariasyanska.github.io/portfolio/)
 [![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/HTML)
 [![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
@@ -9,7 +10,7 @@
 
 This is my personal portfolio website showcasing my work as a **Frontend Developer** with a strong focus on **UI/UX design**.
 
-The goal of this project is to combine clean code, modern interface design, and smooth user experience — similar to real-world product interfaces.
+The goal of this project is to combine clean code, modern interface design, and smooth user experience — aligned with real-world product standards.
 
 ---
 
@@ -28,7 +29,7 @@ The goal of this project is to combine clean code, modern interface design, and 
   Powered by Formspree for handling submissions.
 
 - ⚡ **Performance Optimization**  
-  Optimized images (WebP), minimal JS, and efficient CSS structure.
+  Optimized images (WebP), clean and efficient JavaScript, and well-structured, maintainable CSS architecture.
 
 ---
 
@@ -36,7 +37,7 @@ The goal of this project is to combine clean code, modern interface design, and 
 
 **Frontend**
 - HTML5 (semantic markup)
-- CSS3 (BEM, variables, responsive design)
+- CSS3 (BEM methodology, CSS variables, responsive design)
 - JavaScript (ES6+)
 
 **Design**
@@ -46,6 +47,16 @@ The goal of this project is to combine clean code, modern interface design, and 
 - [AOS](https://michalsnik.github.io/aos/) — scroll animations  
 - [Typed.js](https://mattboldt.github.io/typed.js/) — typing effect  
 - [FontAwesome](https://fontawesome.com/) — icons  
+
+---
+
+## 🎯 What This Project Demonstrates
+
+- Ability to build a fully responsive UI from scratch  
+- Strong understanding of UI/UX and visual hierarchy  
+- Clean and maintainable CSS architecture (BEM)  
+- Implementation of interactive and dynamic UI features  
+- Focus on performance and accessibility  
 
 ---
 
