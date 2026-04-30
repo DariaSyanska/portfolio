@@ -1,32 +1,51 @@
 # 🌟 Personal Portfolio — Daria Sianska
 
-[![Vercel](https://img.shields.io/badge/LIVE_DEMO-FF69B4?style=for-the-badge&logo=google-chrome&logoColor=white)](https://dariasyanska.github.io/portfolio/)
+[![Live Demo](https://img.shields.io/badge/LIVE_DEMO-FF69B4?style=for-the-badge&logo=google-chrome&logoColor=white)](https://dariasyanska.github.io/portfolio/)
 [![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/HTML)
 [![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
 [![JavaScript](https://img.shields.io/badge/javascript-%23F7DF1E.svg?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 
-Welcome! This is my personal portfolio website, showcasing my journey as a **Full Stack Developer** and **UI/UX Designer**. This project was built with a strong focus on performance, accessibility, and clean aesthetics.
+## ✨ About the Project
+
+This is my personal portfolio website showcasing my work as a **Frontend Developer** with a strong focus on **UI/UX design**.
+
+The goal of this project is to combine clean code, modern interface design, and smooth user experience — similar to real-world product interfaces.
 
 ---
 
 ## 🚀 Key Features
 
-* **🌓 Dark/Light Mode:** Full theme support with persistence using `LocalStorage`.
-* **📱 Mobile-First Design:** Fully responsive layout, optimized for all screen sizes and devices.
-* **🎨 UI/UX Excellence:** Carefully curated color palette, smooth animations, and polished typography.
-* **📩 Functional Contact Form:** Integrated with Formspree for seamless communication.
-* **⚡ Performance Optimized:** Using modern image formats (WebP) and optimized CSS/JS architecture.
+- 🌓 **Dark / Light Mode**  
+  Persistent theme switching using `localStorage`.
+
+- 📱 **Responsive Design**  
+  Mobile-first layout optimized for all screen sizes.
+
+- 🎨 **UI/UX Focus**  
+  Clean layout, strong typography, and attention to visual hierarchy.
+
+- 📩 **Contact Form Integration**  
+  Powered by Formspree for handling submissions.
+
+- ⚡ **Performance Optimization**  
+  Optimized images (WebP), minimal JS, and efficient CSS structure.
 
 ---
 
 ## 🛠️ Tech Stack
 
-* **Frontend:** Semantic HTML5, CSS3 (Variables, BEM), JavaScript (ES6+).
-* **Design:** Figma (Wireframing, High-fidelity Prototyping).
-* **Libraries:**
-    * [AOS](https://michalsnik.github.io/aos/) — For scroll animations.
-    * [Typed.js](https://mattboldt.github.io/typed.js/) — For the interactive typewriter effect.
-    * [FontAwesome](https://fontawesome.com/) — For professional vector icons.
+**Frontend**
+- HTML5 (semantic markup)
+- CSS3 (BEM, variables, responsive design)
+- JavaScript (ES6+)
+
+**Design**
+- Figma (wireframes, UI, prototyping)
+
+**Libraries**
+- [AOS](https://michalsnik.github.io/aos/) — scroll animations  
+- [Typed.js](https://mattboldt.github.io/typed.js/) — typing effect  
+- [FontAwesome](https://fontawesome.com/) — icons  
 
 ---
 
@@ -34,11 +53,15 @@ Welcome! This is my personal portfolio website, showcasing my journey as a **Ful
 
 ```text
 /
-├── index.html           # Main entry point
-├── success.html         # Post-submission confirmation page
+├── index.html           # Main landing page (portfolio overview)
+├── success.html         # Confirmation page after form submission
+├── contract.html        # Terms of cooperation / contract details
+├── hire-me.html         # Contact & collaboration page (lead capture)
+├── privacy.html         # Privacy policy (GDPR compliance)
+├── terms.html           # Terms & conditions of website usage
 ├── css/
-│   └── styles.css       # Core styling (Themes & Responsiveness)
+│   └── styles.css       # Core styling (themes, layout, responsiveness)
 ├── js/
-│   └── script.js        # Logic (Theme toggle, Scroll effects, AOS)
-├── images/              # Optimized assets (.webp format)
-└── CV_Daria_Sianska.pdf # Downloadable professional resume
+│   └── script.js        # UI logic (dark/light mode, scroll animations, AOS)
+├── images/              # Optimized assets (WebP, UI previews, icons)
+└── CV_Daria_Sianska.pdf # Downloadable CV / resume
