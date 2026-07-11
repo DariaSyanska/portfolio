@@ -92,25 +92,38 @@
     <header class="header">
       <div class="container">
         <div class="header_container">
-          <nav class="header_nav" aria-label="Main navigation">
-            <a href="#home">
-              <img
-                src="./images/logo.webp"
-                alt="Daria Sianska Portfolio Logo"
-                loading="lazy"
-              />
-            </a>
-            <ul class="header_menu">
-              <li><a class="link" href="#about">About</a></li>
-              <li><a class="link" href="#experience">Experience</a></li>
-              <li><a class="link" href="#projects">Projects</a></li>
-              <li><a class="link" href="#benefits">Benefits</a></li>
-              <li><a class="link" href="#skills">Skills</a></li>
-              <li><a class="link" href="#contact">Contact</a></li>
-            </ul>
-          </nav>
+          <a href="index.html" class="header_logo">
+            <img
+              src="./images/logo.webp"
+              alt="Daria Sianska Portfolio Logo"
+              loading="lazy"
+            />
+          </a>
 
-          <div class="header_actions">
+          <div class="header_mobile-wrapper" id="mobile-menu">
+            <nav class="header_nav" aria-label="Main navigation">
+              <ul class="header_menu">
+                <li><a class="link" href="index.html#about">About</a></li>
+                <li>
+                  <a class="link" href="index.html#experience">Experience</a>
+                </li>
+                <li><a class="link" href="index.html#projects">Projects</a></li>
+                <li><a class="link" href="index.html#benefits">Benefits</a></li>
+                <li><a class="link" href="index.html#skills">Skills</a></li>
+                <li><a class="link" href="index.html#contact">Contact</a></li>
+              </ul>
+            </nav>
+
+            <div class="header_actions">
+              <a href="hire-me.html" class="btn-secondary">Hire Me</a>
+              <a href="CV_Daria_Sianska.pdf" download class="btn-primary">
+                <span class="desktop-text">Download Professional CV</span>
+                <span class="mobile-text">Professional CV</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="header_right">
             <button
               id="theme-toggle"
               aria-label="Toggle theme"
@@ -120,12 +133,43 @@
               <i class="fa-solid fa-moon"></i>
             </button>
 
-            <a href="CV_Daria_Sianska.pdf" download class="btn-primary">
-              <span class="desktop-text">Download Professional CV</span>
-              <span class="mobile-text">Professional CV</span>
-            </a>
-
-            <a href="hire-me.html" class="btn-secondary">Hire Me</a>
+            <button
+              class="burger-btn"
+              aria-expanded="false"
+              aria-controls="mobile-menu"
+              aria-label="Toggle navigation"
+            >
+              <svg
+                class="burger-icon"
+                xmlns="http://www.w3.org/2000/svg"
+                width="28"
+                height="28"
+                viewBox="0 0 28 28"
+                fill="none"
+              >
+                <path
+                  class="burger-line line-top"
+                  d="M4 8H24"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                  stroke-linecap="round"
+                />
+                <path
+                  class="burger-line line-middle"
+                  d="M4 14H24"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                  stroke-linecap="round"
+                />
+                <path
+                  class="burger-line line-bottom"
+                  d="M4 20H24"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                  stroke-linecap="round"
+                />
+              </svg>
+            </button>
           </div>
         </div>
       </div>
@@ -287,6 +331,76 @@
 
         <div class="projects-section_container">
           <h3>Development</h3>
+
+          <article class="project-card" data-aos="zoom-in">
+            <img
+              class="project-image"
+              src="images/lune.webp"
+              alt="Lune Fashion Store Preview"
+              loading="lazy"
+            />
+
+            <div class="project-content">
+              <h4>Lune Fashion Store</h4>
+
+              <div class="project-badges">
+                <span class="project-badge" data-type="frontend">Frontend</span>
+                <span class="project-badge" data-type="ui">UI/UX</span>
+                <span class="project-badge" data-type="advanced">Advanced</span>
+              </div>
+
+              <p class="project-description">
+                A modern minimalist fashion e-commerce platform focused on
+                elegant aesthetics, smooth interactions, and a premium user
+                experience.
+              </p>
+
+              <ul class="project-highlights">
+                <li>
+                  Built a full cart drawer system and interactive wishlist
+                  functionality
+                </li>
+                <li>Implemented a dynamic Light / Dark mode theme system</li>
+                <li>Integrated smooth scrolling and complex GSAP animations</li>
+              </ul>
+
+              <p class="project-result">
+                <strong>Impact:</strong> Delivered a highly interactive,
+                production-ready shopping flow showcasing advanced scalable
+                frontend architecture (7-1 SCSS Pattern).
+              </p>
+
+              <p class="project-stack">
+                <strong>Tech Stack:</strong> Vite, HTML5, SCSS (BEM), JavaScript
+                (ES6+), GSAP, Vercel
+              </p>
+
+              <div class="project-actions">
+                <a
+                  class="project-link-btn"
+                  href="https://lune-shop.vercel.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i
+                    class="fas fa-arrow-up-right-from-square"
+                    aria-hidden="true"
+                  ></i>
+                  <span>Live Demo</span>
+                </a>
+
+                <a
+                  class="project-link-btn"
+                  href="https://github.com/DariaSyanska/lune-shop"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i class="fab fa-github" aria-hidden="true"></i>
+                  <span>View Code</span>
+                </a>
+              </div>
+            </div>
+          </article>
 
           <article class="project-card" data-aos="zoom-in">
             <img

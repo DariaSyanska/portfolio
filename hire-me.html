@@ -33,21 +33,29 @@
     <header class="header">
       <div class="container">
         <div class="header_container">
-          <nav class="header_nav">
-            <a href="index.html">
-              <img
-                src="./images/logo.webp"
-                alt="Daria Sianska Portfolio Logo"
-              />
-            </a>
-            <ul class="header_menu">
-              <li><a class="link" href="index.html#about">About</a></li>
-              <li><a class="link" href="index.html#projects">Projects</a></li>
-              <li><a class="link" href="index.html#contact">Contact</a></li>
-            </ul>
-          </nav>
+          <a href="index.html" class="header_logo">
+            <img
+              src="./images/logo.webp"
+              alt="Daria Sianska Portfolio Logo"
+              loading="lazy"
+            />
+          </a>
 
-          <div class="header_actions">
+          <div class="header_mobile-wrapper" id="mobile-menu">
+            <nav class="header_nav" aria-label="Main navigation">
+              <ul class="header_menu">
+                <li><a class="link" href="index.html#about">About</a></li>
+                <li><a class="link" href="index.html#projects">Projects</a></li>
+                <li><a class="link" href="index.html#contact">Contact</a></li>
+              </ul>
+            </nav>
+
+            <div class="header_actions">
+              <a href="index.html" class="btn-secondary">Back to Portfolio</a>
+            </div>
+          </div>
+
+          <div class="header_right">
             <button
               id="theme-toggle"
               aria-label="Toggle theme"
@@ -56,7 +64,44 @@
             >
               <i class="fa-solid fa-moon"></i>
             </button>
-            <a href="index.html" class="btn-secondary">Back</a>
+
+            <button
+              class="burger-btn"
+              aria-expanded="false"
+              aria-controls="mobile-menu"
+              aria-label="Toggle navigation"
+            >
+              <svg
+                class="burger-icon"
+                xmlns="http://www.w3.org/2000/svg"
+                width="28"
+                height="28"
+                viewBox="0 0 28 28"
+                fill="none"
+              >
+                <path
+                  class="burger-line line-top"
+                  d="M4 8H24"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                  stroke-linecap="round"
+                />
+                <path
+                  class="burger-line line-middle"
+                  d="M4 14H24"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                  stroke-linecap="round"
+                />
+                <path
+                  class="burger-line line-bottom"
+                  d="M4 20H24"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                  stroke-linecap="round"
+                />
+              </svg>
+            </button>
           </div>
         </div>
       </div>
@@ -134,18 +179,95 @@
     <footer class="footer">
       <div class="container">
         <div class="footer_container">
-          <div class="footer_address-info">
-            <a class="footer_address-link" href="terms.html">
-              Terms of Service
-            </a>
-            <a class="footer_address-link" href="privacy.html">
-              Privacy Policy
-            </a>
-            <a class="footer_address-link" href="contract.html">
-              Service Agreement
-            </a>
-            <p class="footer_address-copyright" id="copyright"></p>
-          </div>
+          <nav class="footer_nav" aria-label="Footer navigation">
+            <div class="footer_logo">
+              <a href="index.html">
+                <img src="./images/logo.webp" alt="My Logo" loading="lazy" />
+              </a>
+            </div>
+            <ul class="footer_menu">
+              <li><a class="link" href="index.html#about">About</a></li>
+              <li>
+                <a class="link" href="index.html#experience">Experience</a>
+              </li>
+              <li><a class="link" href="index.html#projects">Projects</a></li>
+              <li><a class="link" href="index.html#skills">Skills</a></li>
+              <li><a class="link" href="index.html#contact">Contact</a></li>
+            </ul>
+          </nav>
+
+          <address class="footer_address">
+            <div class="footer_contacts">
+              <ul class="footer_address-list">
+                <li>
+                  <a class="footer_address-link" href="tel:+420725440386">
+                    +420 725 440 386
+                  </a>
+                </li>
+                <li>
+                  <a
+                    class="footer_address-link"
+                    href="mailto:daria.syanska@gmail.com"
+                  >
+                    daria.syanska@gmail.com
+                  </a>
+                </li>
+                <li>
+                  <a
+                    class="footer_address-link"
+                    href="https://maps.app.goo.gl/Bjd5rcHUu4h82pQM7"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    Prague, Czechia
+                  </a>
+                </li>
+              </ul>
+              <div class="footer_socials">
+                <a
+                  href="https://github.com/DariaSyanska"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="GitHub profile"
+                >
+                  <i class="fab fa-github" aria-hidden="true"></i> GitHub
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/daria-sianska/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn profile"
+                >
+                  <i class="fab fa-linkedin" aria-hidden="true"></i> LinkedIn
+                </a>
+                <a
+                  href="https://www.behance.net/00ddb6e2"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Behance profile"
+                >
+                  <i class="fab fa-behance" aria-hidden="true"></i> Behance
+                </a>
+              </div>
+            </div>
+
+            <div class="footer_address-info">
+              <a class="footer_address-link" href="terms.html">
+                Terms of Service
+              </a>
+              <a class="footer_address-link" href="privacy.html">
+                Privacy Policy
+              </a>
+              <a class="footer_address-link" href="hire-me.html">Hire Me</a>
+              <a class="footer_address-link" href="contract.html">
+                Service Agreement
+              </a>
+              <p class="footer_address-copyright" id="copyright"></p>
+              <p class="footer-mini-text">
+                Frontend Developer & UI/UX Designer based in Prague.
+              </p>
+            </div>
+          </address>
         </div>
       </div>
     </footer>

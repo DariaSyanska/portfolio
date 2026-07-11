@@ -10,18 +10,21 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /* =========================================
-   2. Scroll To Top Button Logic
-   ========================================= */
+  2. Scroll To Top Button Logic
+  ========================================= */
   const scrollToTopBtn = document.getElementById("scrollToTopBtn");
 
   if (scrollToTopBtn) {
-    window.addEventListener("scroll", () => {
+    const toggleScrollButton = () => {
       if (window.scrollY > 300) {
-        scrollToTopBtn.style.display = "block";
+        scrollToTopBtn.classList.add("show");
       } else {
-        scrollToTopBtn.style.display = "none";
+        scrollToTopBtn.classList.remove("show");
       }
-    });
+    };
+
+    window.addEventListener("scroll", toggleScrollButton);
+    toggleScrollButton();
 
     scrollToTopBtn.addEventListener("click", () => {
       window.scrollTo({
@@ -238,6 +241,32 @@ document.addEventListener("DOMContentLoaded", () => {
   if (printContractBtn) {
     printContractBtn.addEventListener("click", () => {
       window.print();
+    });
+  }
+
+  /* =========================================
+   10. Burger Menu Logic
+   ========================================= */
+  const burgerBtn = document.querySelector(".burger-btn");
+  const mobileMenu = document.querySelector(".header_mobile-wrapper");
+  const mobileNavLinks = document.querySelectorAll(
+    ".header_menu .link, .header_actions a",
+  );
+
+  if (burgerBtn && mobileMenu) {
+    burgerBtn.addEventListener("click", () => {
+      const isOpen = burgerBtn.classList.toggle("is-active");
+      mobileMenu.classList.toggle("is-open");
+      document.body.classList.toggle("no-scroll");
+      burgerBtn.setAttribute("aria-expanded", String(isOpen));
+    });
+
+    mobileNavLinks.forEach((link) => {
+      link.addEventListener("click", () => {
+        burgerBtn.classList.remove("is-active");
+        mobileMenu.classList.remove("is-open");
+        document.body.classList.remove("no-scroll");
+      });
     });
   }
 });
