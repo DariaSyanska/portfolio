@@ -248,6 +248,12 @@ body.dark-theme .project-badge {
   border-color: rgba(59, 130, 246, 0.3);
 }
 
+.project-badge[data-type="js"] {
+  background: rgba(202, 138, 4, 0.1);
+  color: #ca8a04;
+  border-color: rgba(202, 138, 4, 0.3);
+}
+
 .project-badge[data-type="backend"] {
   background: rgba(16, 185, 129, 0.1);
   color: #10b981;
