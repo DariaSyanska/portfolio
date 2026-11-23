@@ -119,26 +119,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  /* =========================================
-     6. Typewriter Effect (Typed.js)
-     ========================================= */
-  const typedElement = document.querySelector(".typed-text");
-
-  if (typedElement && typeof Typed !== "undefined") {
-    new Typed(".typed-text", {
-      strings: [
-        "Full Stack Developer.",
-        "UI/UX Designer.",
-        "Problem Solver.",
-      ],
-      typeSpeed: 50,
-      backSpeed: 30,
-      backDelay: 2000,
-      loop: true,
-      cursorChar: "|",
-      contentType: null,
-    });
-  }
+  /* Hero role is intentionally static so it remains readable without animation. */
 
   /* =========================================
      7. PORTFOLIO FORM SUBMISSION (AJAX)

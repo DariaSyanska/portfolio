@@ -766,7 +766,6 @@ body.dark-theme .hero-title {
   background-clip: text;
   -webkit-text-fill-color: transparent;
 
-  animation: gradientMove 4s linear infinite;
 }
 
 body.dark-theme .typed-gradient {
@@ -778,14 +777,6 @@ body.dark-theme .typed-gradient {
   -webkit-text-fill-color: var(--primary-color);
 }
 
-@keyframes gradientMove {
-  0% {
-    background-position: 0% 0;
-  }
-  100% {
-    background-position: 200% 0;
-  }
-}
 
 .hero-description {
   max-width: 550px;
