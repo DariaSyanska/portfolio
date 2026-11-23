@@ -726,12 +726,22 @@ body.dark-theme .header {
 }
 
 .hero-title {
+  width: fit-content;
+  max-width: 100%;
+  margin: 0 auto 10px;
   font-size: 1rem;
   font-weight: 500;
   color: var(--primary-color);
-  margin-bottom: 10px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+  background-image: linear-gradient(90deg, #ec4899 0%, #be185d 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+body.dark-theme .hero-title {
+  background-image: linear-gradient(90deg, #f9a8d4 0%, #f472b6 100%);
 }
 
 .hero-subtitle {
