@@ -127,9 +127,9 @@ document.addEventListener("DOMContentLoaded", () => {
   if (typedElement && typeof Typed !== "undefined") {
     new Typed(typedElement, {
       strings: [
-        "React interfaces.",
-        "TypeScript applications.",
-        "responsive web experiences.",
+        "Junior Frontend Developer.",
+        "React & TypeScript Developer.",
+        "UI/UX-focused Developer.",
       ],
       typeSpeed: 50,
       backSpeed: 30,
