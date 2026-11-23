@@ -9,28 +9,28 @@
 
 ## ✨ About the Project
 
-This is my personal portfolio website showcasing my work as a **Frontend Developer**, with a strong focus on **UI/UX design** and modern web interfaces.
+This is my personal portfolio website. It presents my work as a **Junior Frontend Developer** focused on React, TypeScript, Next.js, and usable web interfaces. I am a Computer Science student and do not present the projects below as commercial experience.
 
-The goal of this project is to combine clean code, modern interface design, and smooth user experience — aligned with real-world product standards.
+The goal is to make my role, selected projects, and contact details easy to review. The portfolio is a static HTML/CSS/JavaScript site; project demos have their own limitations described in their repositories.
 
 ---
 
 ## 🚀 Key Features
 
-- 🌓 **Dark / Light Mode**  
+- 🌓 **Dark / Light Mode**
   Persistent theme switching using `localStorage`.
 
-- 📱 **Responsive Design**  
-  Mobile-first layout optimized for all screen sizes.
+- 📱 **Responsive Layout**
+Responsive styles are implemented; device and accessibility audits should be treated as ongoing work rather than a performance guarantee.
 
-- 🎨 **UI/UX Focus**  
+- 🎨 **UI/UX Focus**
   Clean layout, strong typography, and attention to visual hierarchy.
 
-- 📩 **Contact Form Integration**  
+- 📩 **Contact Form Integration**
   Powered by Formspree for handling submissions.
 
-- ⚡ **Performance Optimization**  
-  Optimized images (WebP), clean and efficient JavaScript, and well-structured, maintainable CSS architecture.
+- ⚡ **Assets and Styling**
+The site uses WebP images, CSS variables, and a BEM-style stylesheet. No benchmark score is claimed.
 
 ---
 
@@ -45,19 +45,19 @@ The goal of this project is to combine clean code, modern interface design, and 
 - Figma (wireframes, UI, prototyping)
 
 **Libraries**
-- [AOS](https://michalsnik.github.io/aos/) — scroll animations  
-- [Typed.js](https://mattboldt.github.io/typed.js/) — typing effect  
-- [FontAwesome](https://fontawesome.com/) — icons  
+- [AOS](https://michalsnik.github.io/aos/) — scroll animations
+- [Typed.js](https://mattboldt.github.io/typed.js/) — typing effect
+- [FontAwesome](https://fontawesome.com/) — icons
 
 ---
 
 ## 🎯 What This Project Demonstrates
 
-- Ability to build a fully responsive UI from scratch  
-- Strong understanding of UI/UX and visual hierarchy  
-- Clean and maintainable CSS architecture (BEM)  
-- Implementation of interactive and dynamic UI features  
-- Strong focus on performance and accessibility
+- Ability to build a fully responsive UI from scratch
+- Strong understanding of UI/UX and visual hierarchy
+- Clean and maintainable CSS architecture (BEM)
+- Implementation of interactive and dynamic UI features
+- Semantic markup and interactive UI patterns; accessibility and performance require ongoing manual and automated checks
 
 ---
 
