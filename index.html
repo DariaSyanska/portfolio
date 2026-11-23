@@ -115,10 +115,10 @@
             </nav>
 
             <div class="header_actions">
-              <a href="hire-me.html" class="btn-secondary">Hire Me</a>
+              <a href="index.html#contact" class="btn-secondary">Contact</a>
               <a href="CV_Daria_Sianska.pdf" download class="btn-primary">
-                <span class="desktop-text">Download Professional CV</span>
-                <span class="mobile-text">Professional CV</span>
+                <span class="desktop-text">Download CV</span>
+                <span class="mobile-text">Download CV</span>
               </a>
             </div>
           </div>
@@ -189,12 +189,14 @@
 
         <h2 class="hero-subtitle" data-aos="fade-up">
           Hi, I'm <span class="hero-name">Daria Sianska</span><br />
-          <span class="typed-gradient">I’m a <span class="typed-text">Full Stack Developer.</span></span>
+          <span class="typed-gradient">
+            I build <span class="typed-text">React interfaces.</span>
+          </span>
         </h2>
 
         <p class="hero-description">
-          Computer Science student building responsive web interfaces and practical
-          applications with React, TypeScript, and Next.js.
+          Computer Science student building responsive web interfaces and
+          practical applications with React, TypeScript, and Next.js.
         </p>
 
         <ul class="hero-points">
@@ -204,12 +206,13 @@
         </ul>
 
         <p class="hero-trust">
-          Available for freelance & full-time • Based in Prague
+          Seeking Junior Frontend roles • Based in Prague • Open to remote across
+          Europe
         </p>
 
         <div class="hero-buttons">
           <a href="#projects" class="btn-primary">View Projects</a>
-          <a href="#contact" class="btn-secondary">Hire Me</a>
+          <a href="#contact" class="btn-secondary">Contact</a>
         </div>
       </div>
     </section>
@@ -242,7 +245,7 @@
         <div class="languages-badges">
           <span class="badge">UA / RU (Native)</span>
           <span class="badge">EN (B1-B2)</span>
-          <span class="badge">CZ (A2, B2 certificate)</span>
+          <span class="badge">CZ (B1, B2 certificate)</span>
         </div>
 
         <div class="interests-container" data-aos="fade-up">
@@ -346,41 +349,45 @@
 
               <div class="project-badges">
                 <span class="project-badge" data-type="fullstack">
-                  Full-Stack
+                  Full-Stack Demo
                 </span>
                 <span class="project-badge" data-type="ui">UI/UX</span>
               </div>
 
               <p class="project-description">
-                Modern full-stack CRM platform for managing clients, deals,
-                tasks, and sales pipelines with a SaaS-style dashboard and
-                interactive UI.
+                <strong>Goal:</strong> Bring contacts, deals, tasks, and notes
+                into one clear sales-pipeline workflow.
               </p>
 
               <ul class="project-highlights">
                 <li>
-                  Built a drag-and-drop Kanban board that syncs stage changes
-                  through the API
+                  Connected the Next.js and TypeScript interface to the FastAPI
+                  REST API for client, deal, task, and note workflows
                 </li>
                 <li>
-                  Developed analytics dashboard with charts, KPIs, and activity
-                  tracking
+                  Made Kanban deal-stage changes persist through the API and
+                  added dashboard charts, KPIs, and activity tracking
                 </li>
                 <li>
-                  Implemented authentication, dark/light theme, and responsive
-                  UI system
+                  Built responsive screens and authentication flows for the
+                  portfolio demo
                 </li>
               </ul>
 
               <p class="project-result">
-                <strong>What I built:</strong> A CRM prototype with client,
-                deal, task, and note workflows. This demo is not a production
-                service.
+                <strong>Engineering choices:</strong> Kept the Next.js client
+                and FastAPI service separate, used PostgreSQL for relational
+                workflow data, and used dnd-kit for Kanban interactions.
               </p>
 
               <p class="project-stack">
                 <strong>Tech Stack:</strong> Next.js 16, React, TypeScript,
                 Tailwind CSS, FastAPI, PostgreSQL, Recharts, dnd-kit
+              </p>
+
+              <p class="project-limitations">
+                <strong>Scope:</strong> This is a portfolio prototype, not a
+                production CRM. Do not use it for real customer data.
               </p>
 
               <div class="project-actions">
@@ -429,29 +436,34 @@
               </div>
 
               <p class="project-description">
-                A frontend-only concept storefront focused on product discovery,
-                cart interactions, and a polished shopping interface. No real
-                payments or backend account system are implemented.
+                <strong>Goal:</strong> Demonstrate a fashion storefront journey
+                from product discovery through cart review.
               </p>
 
               <ul class="project-highlights">
                 <li>
-                  Built a full cart drawer system and interactive wishlist
-                  functionality
+                  Built product browsing, cart-drawer, and wishlist flows in
+                  the client interface
                 </li>
                 <li>Implemented a dynamic Light / Dark mode theme system</li>
                 <li>Integrated smooth scrolling and complex GSAP animations</li>
               </ul>
 
               <p class="project-result">
-                <strong>What I built:</strong> An interactive concept shopping
-                flow using modular JavaScript and SCSS. Checkout is a visual
-                demo; it does not process real orders or payments.
+                <strong>Engineering choices:</strong> Used Vite, modular
+                JavaScript, BEM-organized SCSS, client-side state, and GSAP for
+                selected motion effects.
               </p>
 
               <p class="project-stack">
                 <strong>Tech Stack:</strong> Vite, HTML5, SCSS (BEM), JavaScript
                 (ES6+), GSAP, Vercel
+              </p>
+
+              <p class="project-limitations">
+                <strong>Scope:</strong> Frontend-only concept. Account flows are
+                mock interactions; no backend accounts, order processing, or
+                payments are implemented.
               </p>
 
               <div class="project-actions">
@@ -497,29 +509,33 @@
               </div>
 
               <p class="project-description">
-                Responsive landing page for an online interior design academy
-                with a strong focus on visual storytelling, smooth interaction,
-                and lead generation.
+                <strong>Goal:</strong> Introduce an online interior-design
+                academy and guide visitors toward its enquiry flow.
               </p>
 
               <ul class="project-highlights">
                 <li>
-                  Built a dynamic hero slider with synchronized content
-                  transitions
+                  Built a responsive landing page and synchronized hero
+                  slider with vanilla JavaScript
                 </li>
                 <li>Created an interactive student reviews gallery</li>
                 <li>Structured the page for stronger conversion flow</li>
               </ul>
 
               <p class="project-result">
-                <strong>What I built:</strong> Implemented an interactive hero
-                slider, a student reviews gallery, and a responsive layout
-                designed to guide users through the page.
+                <strong>Engineering choices:</strong> Used BEM-style CSS,
+                Scroll Snap for gallery movement, and Intersection Observer for
+                in-view behavior.
               </p>
 
               <p class="project-stack">
                 <strong>Tech Stack:</strong> HTML5, CSS3 (BEM, Scroll Snap),
                 JavaScript (ES6+), Intersection Observer API
+              </p>
+
+              <p class="project-limitations">
+                <strong>Scope:</strong> The contact form is a visual demo and
+                does not send enquiries.
               </p>
 
               <div class="project-actions">
@@ -830,11 +846,6 @@
               </div>
             </div>
           </article>
-
-
-
-
-
         </div>
       </div>
     </section>
@@ -1096,9 +1107,8 @@
               <a class="footer_address-link" href="privacy.html">
                 Privacy Policy
               </a>
-              <a class="footer_address-link" href="hire-me.html">Hire Me</a>
-              <a class="footer_address-link" href="contract.html">
-                Service Agreement
+              <a class="footer_address-link" href="hire-me.html">
+                Freelance services
               </a>
               <p class="footer_address-copyright" id="copyright"></p>
               <p class="footer-mini-text">

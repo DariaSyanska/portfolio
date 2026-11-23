@@ -225,7 +225,8 @@ body.dark-theme .project-highlights {
 
 body.dark-theme .project-description,
 body.dark-theme .project-result,
-body.dark-theme .project-stack {
+body.dark-theme .project-stack,
+body.dark-theme .project-limitations {
   color: var(--text-light);
 }
 
@@ -1144,14 +1145,16 @@ section h2::after {
 
 .project-description,
 .project-result,
-.project-stack {
+.project-stack,
+.project-limitations {
   margin: 0 0 1rem;
   color: var(--text-light);
   font-size: 0.95rem;
 }
 
 .project-result strong,
-.project-stack strong {
+.project-stack strong,
+.project-limitations strong {
   color: var(--text-dark);
 }
 
