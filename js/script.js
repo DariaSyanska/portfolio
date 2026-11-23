@@ -119,7 +119,27 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  /* Hero role is intentionally static so it remains readable without animation. */
+  /* =========================================
+     6. Typewriter Role Rotation
+     ========================================= */
+  const typedElement = document.querySelector(".typed-text");
+
+  if (typedElement && typeof Typed !== "undefined") {
+    new Typed(typedElement, {
+      strings: [
+        "Full Stack Developer.",
+        "UI/UX Designer.",
+        "Problem Solver.",
+      ],
+      typeSpeed: 50,
+      backSpeed: 30,
+      backDelay: 1800,
+      smartBackspace: true,
+      loop: true,
+      cursorChar: "|",
+      contentType: null,
+    });
+  }
 
   /* =========================================
      7. PORTFOLIO FORM SUBMISSION (AJAX)
