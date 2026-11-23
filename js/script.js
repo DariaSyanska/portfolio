@@ -127,16 +127,16 @@ document.addEventListener("DOMContentLoaded", () => {
   if (typedElement && typeof Typed !== "undefined") {
     new Typed(".typed-text", {
       strings: [
-        '<span class="typed-gradient">Full Stack Developer.</span>',
-        '<span class="typed-gradient">UI/UX Designer.</span>',
-        '<span class="typed-gradient">Problem Solver.</span>',
+        "Full Stack Developer.",
+        "UI/UX Designer.",
+        "Problem Solver.",
       ],
       typeSpeed: 50,
       backSpeed: 30,
       backDelay: 2000,
       loop: true,
       cursorChar: "|",
-      contentType: "html",
+      contentType: null,
     });
   }
 
