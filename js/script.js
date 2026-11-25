@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
      3. Active Navigation Link on Scroll
      ========================================= */
   const sections = document.querySelectorAll("section[id]");
-  const navLinks = document.querySelectorAll(".header_menu li a");
+  const navLinks = document.querySelectorAll(".header_menu a");
 
   function updateActiveLink() {
     let current = "";
@@ -55,6 +55,8 @@ document.addEventListener("DOMContentLoaded", () => {
       if (a.getAttribute("href") === `#${current}`) {
         a.classList.add("active");
       }
+
+      if (a.hash === `#${current}`) a.classList.add("active");
     });
   }
 
@@ -124,31 +126,57 @@ document.addEventListener("DOMContentLoaded", () => {
      ========================================= */
   const typedElement = document.querySelector(".typed-text");
 
-  if (typedElement && typeof Typed !== "undefined") {
-    new Typed(typedElement, {
-      strings: [
-        "Junior Frontend Developer.",
-        "React & TypeScript Developer.",
-        "UI/UX-focused Developer.",
-      ],
-      typeSpeed: 50,
-      backSpeed: 30,
-      backDelay: 1800,
-      smartBackspace: true,
-      loop: true,
-      cursorChar: "|",
-      contentType: null,
-    });
+  if (typedElement) {
+    const phrases = [
+      "building React interfaces.",
+      "creating responsive web apps.",
+      "turning designs into UI.",
+    ];
+
+    const reduceMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
+
+    if (typeof Typed !== "undefined" && !reduceMotion) {
+      typedElement.parentElement.setAttribute("aria-hidden", "true");
+      const srText = document.createElement("span");
+      srText.className = "sr-only";
+      srText.textContent = phrases[0];
+      typedElement.closest(".hero-title").appendChild(srText);
+
+      new Typed(typedElement, {
+        strings: phrases,
+        typeSpeed: 50,
+        backSpeed: 30,
+        startDelay: 400,
+        backDelay: 1800,
+        loop: true,
+        cursorChar: "|",
+      });
+    }
   }
 
   /* =========================================
-     7. PORTFOLIO FORM SUBMISSION (AJAX)
+     7. PORTFOLIO FORM SUBMISSION 
+     EmailJS Integration
      ========================================= */
   const contactForm = document.getElementById("contactForm");
+
   if (contactForm) {
+    const SERVICE_ID = "service_kfl5v9l";
+    const TEMPLATE_ID = "template_0v41jqb";
+    const PUBLIC_KEY = "vT1u3JSjl5m_n6ux8";
+
     const consentCheckbox = document.getElementById("contact-consent");
     const consentError = document.getElementById("consent-error");
     const consentField = consentCheckbox?.closest(".consent-field");
+    const formStatus = document.getElementById("form-status");
+
+    const submitBtn = contactForm.querySelector(".editorial-submit");
+
+    const nameInput = contactForm.querySelector("#contact-user-name");
+    const emailInput = contactForm.querySelector("#contact-user-email");
+    const messageInput = contactForm.querySelector("#contact-user-message");
 
     const clearConsentError = () => {
       if (consentError) consentError.textContent = "";
@@ -160,17 +188,39 @@ document.addEventListener("DOMContentLoaded", () => {
         consentError.textContent =
           "Please accept the Privacy Policy before submitting the form.";
       }
-      if (consentField) consentField.classList.add("has-error");
+
+      consentField?.classList.add("has-error");
     };
 
+    const showFormStatus = (message, type = "") => {
+      if (!formStatus) return;
+
+      formStatus.textContent = message;
+      formStatus.className = "form-status";
+
+      if (type) {
+        formStatus.classList.add(type);
+      }
+    };
+
+    if (typeof emailjs !== "undefined") {
+      emailjs.init({
+        publicKey: PUBLIC_KEY,
+      });
+    }
+
     consentCheckbox?.addEventListener("change", () => {
-      if (consentCheckbox.checked) clearConsentError();
+      if (consentCheckbox.checked) {
+        clearConsentError();
+      }
     });
 
-    contactForm.addEventListener("submit", async function (event) {
+    contactForm.addEventListener("submit", async (event) => {
       event.preventDefault();
 
-      if (!consentCheckbox || !consentCheckbox.checked) {
+      if (!contactForm.reportValidity()) return;
+
+      if (!consentCheckbox?.checked) {
         showConsentError();
         consentCheckbox?.focus();
         return;
@@ -178,35 +228,69 @@ document.addEventListener("DOMContentLoaded", () => {
 
       clearConsentError();
 
-      const submitBtn = contactForm.querySelector(".contact-section_button");
       if (!submitBtn) return;
-      const originalText = submitBtn.innerText;
 
-      submitBtn.innerText = "Sending...";
+      if (typeof emailjs === "undefined") {
+        showFormStatus(
+          "Email service is unavailable. Please try again later.",
+          "error",
+        );
+        return;
+      }
+
+      const originalHTML = submitBtn.innerHTML;
+
       submitBtn.disabled = true;
+      submitBtn.classList.add("is-loading");
+      submitBtn.setAttribute("aria-busy", "true");
+      submitBtn.innerHTML = "Sending...";
 
-      const formData = new FormData(contactForm);
+      showFormStatus("Sending your message...", "loading");
 
       try {
-        const response = await fetch(contactForm.action, {
-          method: "POST",
-          body: formData,
-          headers: { Accept: "application/json" },
-        });
-
-        if (response.ok) {
-          contactForm.reset();
-          clearConsentError();
-          window.location.href = "success.html";
-        } else {
-          alert("Oops! There was a problem submitting your form");
-          submitBtn.innerText = originalText;
-          submitBtn.disabled = false;
+        if (!nameInput || !emailInput || !messageInput) {
+          throw new Error("Contact form fields were not found.");
         }
+
+        const templateParams = {
+          name: nameInput.value.trim(),
+          email: emailInput.value.trim(),
+          message: messageInput.value.trim(),
+        };
+
+        const result = await Promise.race([
+          emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams),
+          new Promise((_, reject) =>
+            setTimeout(
+              () => reject(new Error("EmailJS request timed out")),
+              15000,
+            ),
+          ),
+        ]);
+
+        console.log("EmailJS success:", result);
+
+        contactForm.reset();
+        clearConsentError();
+
+        showFormStatus(
+          "Thank you! Your message has been sent successfully.",
+          "success",
+        );
       } catch (error) {
-        alert("Oops! There was a problem submitting your form");
-        submitBtn.innerText = originalText;
+        console.error("EmailJS error:", error);
+
+        showFormStatus(
+          error?.text ||
+            error?.message ||
+            "Something went wrong. Please try again.",
+          "error",
+        );
+      } finally {
         submitBtn.disabled = false;
+        submitBtn.classList.remove("is-loading");
+        submitBtn.removeAttribute("aria-busy");
+        submitBtn.innerHTML = originalHTML;
       }
     });
   }
@@ -250,24 +334,39 @@ document.addEventListener("DOMContentLoaded", () => {
    ========================================= */
   const burgerBtn = document.querySelector(".burger-btn");
   const mobileMenu = document.querySelector(".header_mobile-wrapper");
+
   const mobileNavLinks = document.querySelectorAll(
     ".header_menu .link, .header_actions a",
   );
 
+  const closeMenu = () => {
+    if (!burgerBtn || !mobileMenu) return;
+
+    burgerBtn.classList.remove("is-active");
+    mobileMenu.classList.remove("is-open");
+    document.body.classList.remove("no-scroll");
+
+    burgerBtn.setAttribute("aria-expanded", "false");
+  };
+
   if (burgerBtn && mobileMenu) {
     burgerBtn.addEventListener("click", () => {
       const isOpen = burgerBtn.classList.toggle("is-active");
+
       mobileMenu.classList.toggle("is-open");
       document.body.classList.toggle("no-scroll");
+
       burgerBtn.setAttribute("aria-expanded", String(isOpen));
     });
 
     mobileNavLinks.forEach((link) => {
-      link.addEventListener("click", () => {
-        burgerBtn.classList.remove("is-active");
-        mobileMenu.classList.remove("is-open");
-        document.body.classList.remove("no-scroll");
-      });
+      link.addEventListener("click", closeMenu);
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") {
+        closeMenu();
+      }
     });
   }
 });
