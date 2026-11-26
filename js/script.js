@@ -105,19 +105,51 @@ document.addEventListener("DOMContentLoaded", () => {
     themeToggleBtn.setAttribute("aria-pressed", String(isDarkInitially));
 
     themeToggleBtn.addEventListener("click", () => {
-      const isDark = body.classList.toggle("dark-theme");
-      localStorage.setItem("theme", isDark ? "dark" : "light");
+      const toggle = () => {
+        const isDark = body.classList.toggle("dark-theme");
+        localStorage.setItem("theme", isDark ? "dark" : "light");
 
-      if (themeIcon) {
-        if (isDark) {
-          themeIcon.classList.replace("fa-moon", "fa-sun");
-        } else {
-          themeIcon.classList.replace("fa-sun", "fa-moon");
+        if (themeIcon) {
+          themeIcon.classList.toggle("fa-sun", isDark);
+          themeIcon.classList.toggle("fa-moon", !isDark);
         }
+
+        themeToggleBtn.setAttribute("aria-pressed", String(isDark));
+        updateAvatar(isDark);
+      };
+
+      const reduceMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)",
+      ).matches;
+
+      if (!document.startViewTransition || reduceMotion) {
+        toggle();
+        return;
       }
 
-      themeToggleBtn.setAttribute("aria-pressed", String(isDark));
-      updateAvatar(isDark);
+      const rect = themeToggleBtn.getBoundingClientRect();
+      const x = rect.left + rect.width / 2;
+      const y = rect.top + rect.height / 2;
+      const radius = Math.hypot(
+        Math.max(x, innerWidth - x),
+        Math.max(y, innerHeight - y),
+      );
+
+      document.startViewTransition(toggle).ready.then(() => {
+        document.documentElement.animate(
+          {
+            clipPath: [
+              `circle(0px at ${x}px ${y}px)`,
+              `circle(${radius}px at ${x}px ${y}px)`,
+            ],
+          },
+          {
+            duration: 600,
+            easing: "ease-in-out",
+            pseudoElement: "::view-transition-new(root)",
+          },
+        );
+      });
     });
   }
 
@@ -369,4 +401,76 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   }
+
+  /* =========================================
+   11. Hero Entrance (GSAP)
+   ========================================= */
+  const prefersReducedMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)",
+  ).matches;
+
+  if (typeof gsap !== "undefined" && !prefersReducedMotion) {
+    gsap.from(
+      [
+        ".hero-avatar",
+        ".hero-status",
+        ".hero-eyebrow",
+        ".hero-title",
+        ".hero-description",
+        ".hero-points li",
+        ".hero-buttons a",
+      ],
+      {
+        y: 24,
+        autoAlpha: 0,
+        duration: 0.8,
+        ease: "power3.out",
+        stagger: 0.08,
+        delay: 0.1,
+        clearProps: "all",
+      },
+    );
+  }
+
+  /* =========================================
+   12. Project Cards Spotlight
+   ========================================= */
+  const hasFinePointer = window.matchMedia(
+    "(hover: hover) and (pointer: fine)",
+  ).matches;
+
+  if (hasFinePointer) {
+    document.querySelectorAll(".project-card").forEach((card) => {
+      card.addEventListener("pointermove", (e) => {
+        const rect = card.getBoundingClientRect();
+        card.style.setProperty("--mx", `${e.clientX - rect.left}px`);
+        card.style.setProperty("--my", `${e.clientY - rect.top}px`);
+      });
+    });
+  }
+
+  /* =========================================
+   13. Screenshot Theme Compare
+   ========================================= */
+  document.querySelectorAll("[data-theme-compare]").forEach((block) => {
+    const buttons = block.querySelectorAll("[data-theme-choice]");
+    const images = block.querySelectorAll("[data-theme-img]");
+
+    buttons.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const choice = btn.dataset.themeChoice;
+        block.dataset.theme = choice;
+
+        buttons.forEach((b) =>
+          b.setAttribute("aria-pressed", String(b === btn)),
+        );
+        images.forEach((img) =>
+          img.setAttribute(
+            "aria-hidden",
+            String(img.dataset.themeImg !== choice),
+          ),
+        );
+      });
+    });
+  });
 });

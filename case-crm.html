@@ -1,0 +1,532 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>CRM SaaS Platform | Case Study | Daria Sianska</title>
+    <meta
+      name="description"
+      content="Case study: a sales-pipeline CRM built with Next.js, TypeScript, FastAPI and PostgreSQL. Clients, deals, tasks and notes in one workspace."
+    />
+    <meta name="author" content="Daria Sianska" />
+    <meta name="theme-color" content="#ec4899" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta property="og:type" content="article" />
+    <meta
+      property="og:url"
+      content="https://dariasyanska.github.io/portfolio/case-crm.html"
+    />
+    <meta property="og:title" content="CRM SaaS Platform | Case Study" />
+    <meta
+      property="og:description"
+      content="Case study: a sales-pipeline CRM built with Next.js, TypeScript, FastAPI and PostgreSQL."
+    />
+    <meta
+      property="og:image"
+      content="https://dariasyanska.github.io/portfolio/images/crm-cover.webp"
+    />
+    <meta
+      property="og:image:alt"
+      content="CRM landing page shown on a laptop screen"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="CRM SaaS Platform | Case Study" />
+    <meta
+      name="twitter:description"
+      content="Case study: a sales-pipeline CRM built with Next.js, TypeScript, FastAPI and PostgreSQL."
+    />
+    <meta
+      name="twitter:image"
+      content="https://dariasyanska.github.io/portfolio/images/crm-cover.webp"
+    />
+    <meta
+      name="twitter:image:alt"
+      content="CRM landing page shown on a laptop screen"
+    />
+
+    <link rel="stylesheet" href="css/styles.css?v=20261126-1" />
+    <link
+      rel="canonical"
+      href="https://dariasyanska.github.io/portfolio/case-crm.html"
+    />
+    <link rel="icon" type="image/webp" href="./images/favicon.webp" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600;700&family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <script>
+      try {
+        if (localStorage.getItem("theme") === "dark")
+          document.body.classList.add("dark-theme");
+      } catch (e) {}
+    </script>
+
+    <div class="bg-blobs">
+      <div class="blob blob-1"></div>
+      <div class="blob blob-2"></div>
+    </div>
+
+    <header class="header">
+      <div class="container">
+        <div class="header_container">
+          <a href="index.html" class="header_logo">
+            <img src="./images/logo.webp" alt="Daria Sianska Portfolio Logo" />
+          </a>
+
+          <div class="header_mobile-wrapper" id="mobile-menu">
+            <nav class="header_nav" aria-label="Main navigation">
+              <ul class="header_menu">
+                <li><a class="link" href="index.html#about">About</a></li>
+                <li><a class="link" href="index.html#projects">Projects</a></li>
+                <li><a class="link" href="index.html#contact">Contact</a></li>
+              </ul>
+            </nav>
+
+            <div class="header_actions">
+              <a href="index.html" class="btn-secondary">Back to Portfolio</a>
+            </div>
+          </div>
+
+          <div class="header_right">
+            <button
+              id="theme-toggle"
+              aria-label="Toggle theme"
+              aria-pressed="false"
+              title="Toggle theme"
+            >
+              <i class="fa-solid fa-moon"></i>
+            </button>
+
+            <button
+              class="burger-btn"
+              aria-expanded="false"
+              aria-controls="mobile-menu"
+              aria-label="Toggle navigation"
+            >
+              <svg
+                class="burger-icon"
+                xmlns="http://www.w3.org/2000/svg"
+                width="28"
+                height="28"
+                viewBox="0 0 28 28"
+                fill="none"
+              >
+                <path
+                  class="burger-line line-top"
+                  d="M4 8H24"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                  stroke-linecap="round"
+                />
+                <path
+                  class="burger-line line-middle"
+                  d="M4 14H24"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                  stroke-linecap="round"
+                />
+                <path
+                  class="burger-line line-bottom"
+                  d="M4 20H24"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                  stroke-linecap="round"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="case-hero">
+        <div class="container">
+          <a href="index.html#projects" class="case-back">← All projects</a>
+          <h1>CRM SaaS Platform</h1>
+          <p class="case-lead">
+            A sales-pipeline workspace that brings clients, deals, tasks and
+            notes into one place.
+          </p>
+
+          <dl class="case-meta">
+            <div>
+              <dt>Role</dt>
+              <dd>Design, frontend, backend</dd>
+            </div>
+            <div>
+              <dt>Type</dt>
+              <dd>Portfolio prototype</dd>
+            </div>
+            <div>
+              <dt>Timeline</dt>
+              <dd>April – November 2026</dd>
+            </div>
+            <div>
+              <dt>Stack</dt>
+              <dd>Next.js, TypeScript, FastAPI, PostgreSQL</dd>
+            </div>
+          </dl>
+
+          <div class="case-actions">
+            <a
+              class="btn-primary"
+              href="https://crm-self-one.vercel.app"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Live Demo</a
+            >
+            <a
+              class="btn-secondary"
+              href="https://github.com/DariaSyanska/crm"
+              target="_blank"
+              rel="noopener noreferrer"
+              >View Code</a
+            >
+          </div>
+
+          <img
+            class="case-cover"
+            src="images/crm-cover.webp"
+            alt="CRM landing page shown on a laptop screen"
+          />
+        </div>
+      </section>
+
+      <section class="case-section">
+        <div class="container case-grid">
+          <h2>The problem</h2>
+          <div class="case-text">
+            <p>
+              Small sales teams often keep client details in one place, deals in
+              another and follow-ups in someone’s head. Nothing connects a
+              client to their deals, tasks and notes, and nobody sees the whole
+              pipeline at a glance.
+            </p>
+            <p>
+              I wanted to build a compact workspace that answers a simple
+              question: what needs attention today, and where does each deal
+              stand?
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <div class="container case-grid">
+          <h2>The approach</h2>
+          <div class="case-text">
+            <p>
+              Five modules sit under one navigation: Dashboard, Clients, Deals,
+              Tasks and Notes. Each one is built around a single job.
+            </p>
+            <ul>
+              <li>
+                <strong>Deals as a Kanban board.</strong> Cards move through
+                Lead, Contacted, Negotiation, Won and Lost, and every move is
+                saved through the API.
+              </li>
+              <li>
+                <strong>A dashboard for the daily view.</strong> It shows total
+                clients, active deals, revenue from won deals and tasks due
+                today, plus a chart of deals by stage.
+              </li>
+              <li>
+                <strong>Two roles.</strong> The workspace is set up for Admin
+                and Manager users, with sign-in and account creation flows.
+              </li>
+              <li>
+                <strong>Light and dark themes</strong> and a layout that works
+                from desktop down to a phone.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <div class="container case-grid">
+          <h2>Key decisions</h2>
+          <div class="case-text">
+            <p>
+              <strong>Separate client and API.</strong> The Next.js interface
+              and the FastAPI service are independent. The UI talks to the
+              backend only through a REST API, so each side can be changed and
+              deployed on its own.
+            </p>
+            <p>
+              <strong>PostgreSQL for the data.</strong> Clients, deals, tasks
+              and notes are closely related records. A relational database keeps
+              those links explicit and makes pipeline totals easy to calculate.
+            </p>
+            <p>
+              <strong>dnd-kit for the Kanban board.</strong> It handles
+              drag-and-drop interactions while leaving the card design and the
+              saving logic fully under my control.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <div class="container case-grid">
+          <h2>Challenges</h2>
+          <div class="case-text">
+            <p>
+              <strong>Shipping a public demo without weak defaults.</strong>
+              The interface and the API run as separate services, so I
+              configured CORS for the deployed client, and I added a seed script
+              that creates a demo user so visitors can look around without
+              registering.
+            </p>
+            <p>
+              Months later I went back to the authentication setup. The first
+              version of the API had a fallback secret key (“changeme”) in the
+              code. That is convenient on a laptop, but easy to ship by
+              accident. I changed it so the unsafe path is the one that fails:
+              the API now refuses to start unless <code>SECRET_KEY</code> is a
+              random value of at least 32 characters. Demo data is created only
+              when <code>ENABLE_DEMO_DATA</code> is switched on, and it is off
+              by default. Every setting is documented in
+              <code>.env.example</code> and the README.
+            </p>
+            <p>
+              If I started again, I would add this kind of configuration check
+              in the first commit. Tightening defaults months later worked, but
+              building them in from the start is simpler.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <div class="container">
+          <h2 class="case-center">Screens</h2>
+
+          <div class="case-shots">
+            <figure class="case-shot--wide">
+              <div class="case-shot__row">
+                <img
+                  src="images/crm-kanban-1.webp"
+                  alt="Kanban board with deals grouped by stage"
+                  loading="lazy"
+                />
+                <img
+                  src="images/crm-kanban-2.webp"
+                  alt="Kanban board while a deal card is moved to another stage"
+                  loading="lazy"
+                />
+              </div>
+              <figcaption>Deals pipeline (drag &amp; drop)</figcaption>
+            </figure>
+
+            <figure
+              class="theme-compare case-shot--wide"
+              data-theme-compare
+              data-theme="dark"
+            >
+              <div class="theme-compare__stage">
+                <div class="theme-compare__pair" data-theme-img="dark">
+                  <img
+                    src="images/crm-dashboard-dark-1.webp"
+                    alt="Dashboard in dark theme on desktop"
+                    loading="lazy"
+                  />
+                  <img
+                    src="images/crm-dashboard-dark-2.webp"
+                    alt="Dashboard in dark theme on a phone"
+                    loading="lazy"
+                  />
+                </div>
+                <div
+                  class="theme-compare__pair"
+                  data-theme-img="light"
+                  aria-hidden="true"
+                >
+                  <img
+                    src="images/crm-dashboard-light-1.webp"
+                    alt="Dashboard in light theme on desktop"
+                    loading="lazy"
+                  />
+                  <img
+                    src="images/crm-dashboard-light-2.webp"
+                    alt="Dashboard in light theme on a phone"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+              <div class="theme-compare__controls">
+                <button
+                  type="button"
+                  class="theme-compare__btn"
+                  data-theme-choice="dark"
+                  aria-pressed="true"
+                >
+                  Dark
+                </button>
+                <button
+                  type="button"
+                  class="theme-compare__btn"
+                  data-theme-choice="light"
+                  aria-pressed="false"
+                >
+                  Light
+                </button>
+              </div>
+              <figcaption>
+                Dashboard in both themes, desktop and mobile
+              </figcaption>
+            </figure>
+
+            <figure class="case-shot--wide">
+              <div class="case-shot__row">
+                <img
+                  src="images/crm-clients-1.webp"
+                  alt="Clients list"
+                  loading="lazy"
+                />
+                <img
+                  src="images/crm-clients-2.webp"
+                  alt="Client details"
+                  loading="lazy"
+                />
+              </div>
+              <figcaption>Clients</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <div class="container case-grid">
+          <h2>Scope &amp; next steps</h2>
+          <div class="case-text">
+            <p>
+              This is a portfolio prototype, not a production CRM. Do not use it
+              for real customer data.
+            </p>
+            <p>If I continued the project, I would add:</p>
+            <ul>
+              <li>automated tests for the API and the Kanban flow</li>
+              <li>reminders for tasks that are due or overdue</li>
+              <li>more granular permissions beyond the two roles</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer_container">
+          <nav class="footer_nav" aria-label="Footer navigation">
+            <div class="footer_logo">
+              <a href="index.html">
+                <img
+                  src="./images/logo.webp"
+                  alt="Daria Sianska Portfolio Logo"
+                  loading="lazy"
+                />
+              </a>
+            </div>
+            <ul class="footer_menu">
+              <li><a class="link" href="index.html#about">About</a></li>
+              <li>
+                <a class="link" href="index.html#experience">Experience</a>
+              </li>
+              <li><a class="link" href="index.html#projects">Projects</a></li>
+              <li><a class="link" href="index.html#skills">Skills</a></li>
+              <li><a class="link" href="index.html#contact">Contact</a></li>
+            </ul>
+          </nav>
+
+          <address class="footer_address">
+            <div class="footer_contacts">
+              <ul class="footer_address-list">
+                <li>
+                  <a class="footer_address-link" href="tel:+420725440386">
+                    +420 725 440 386
+                  </a>
+                </li>
+                <li>
+                  <a
+                    class="footer_address-link"
+                    href="mailto:daria.syanska@gmail.com"
+                  >
+                    daria.syanska@gmail.com
+                  </a>
+                </li>
+                <li>
+                  <a
+                    class="footer_address-link"
+                    href="https://maps.app.goo.gl/Bjd5rcHUu4h82pQM7"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    Prague, Czechia
+                  </a>
+                </li>
+              </ul>
+              <div class="footer_socials">
+                <a
+                  href="https://github.com/DariaSyanska"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="GitHub profile"
+                >
+                  <i class="fab fa-github" aria-hidden="true"></i> GitHub
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/daria-sianska/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn profile"
+                >
+                  <i class="fab fa-linkedin" aria-hidden="true"></i> LinkedIn
+                </a>
+                <a
+                  href="https://www.behance.net/00ddb6e2"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Behance profile"
+                >
+                  <i class="fab fa-behance" aria-hidden="true"></i> Behance
+                </a>
+              </div>
+            </div>
+
+            <div class="footer_address-info">
+              <a class="footer_address-link" href="terms.html">
+                Terms of Service
+              </a>
+              <a class="footer_address-link" href="privacy.html">
+                Privacy Policy
+              </a>
+              <a class="footer_address-link" href="hire-me.html">
+                Freelance services
+              </a>
+              <a class="footer_address-link" href="contract.html">
+                Service Agreement
+              </a>
+              <p class="footer_address-copyright" id="copyright"></p>
+              <p class="footer-mini-text">
+                Frontend Developer &amp; UI/UX Designer based in Prague.
+              </p>
+            </div>
+          </address>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/script.js" defer></script>
+  </body>
+</html>

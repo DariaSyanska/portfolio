@@ -49,7 +49,7 @@
       content="https://dariasyanska.github.io/portfolio/images/preview.jpg"
     />
 
-    <link rel="stylesheet" href="css/styles.css?v=20261123-1" />
+    <link rel="stylesheet" href="css/styles.css?v=20261126-1" />
     <link rel="canonical" href="https://dariasyanska.github.io/portfolio/" />
     <link rel="icon" type="image/webp" href="./images/favicon.webp" />
 
@@ -73,10 +73,8 @@
       }
     </script>
 
-    <link
-      href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600;700&family=Poppins:wght@400;500;600;700&display=swap"
       rel="stylesheet"
@@ -233,11 +231,13 @@
       <section class="summary-section">
         <div class="container">
           <div class="summary-grid">
-            <div><strong>Frontend:</strong> React, Next.js, JavaScript</div>
+            <div><strong>Frontend:</strong> React, Next.js, TypeScript</div>
             <div>
               <strong>UI/UX:</strong> Figma, responsive design, wireframes
             </div>
-            <div><strong>Backend:</strong> FastAPI, Node.js, PostgreSQL</div>
+            <div>
+              <strong>Backend:</strong> FastAPI, Python, Node.js, PostgreSQL
+            </div>
           </div>
         </div>
       </section>
@@ -259,29 +259,21 @@
           <div class="languages-badges">
             <span class="badge">UA / RU (Native)</span>
             <span class="badge">EN (B1-B2)</span>
-            <span class="badge">CZ (B1, B2 certificate)</span>
+            <span class="badge">CZ (B1, · B2 certificate, 2024)</span>
           </div>
 
           <div class="interests-container" data-aos="fade-up">
             <h3>Interests</h3>
-            <div class="interests-grid">
-              <div class="interest-item">
-                <i class="fas fa-camera"></i>
-                <span>Photography</span>
-              </div>
-              <div class="interest-item">
-                <i class="fas fa-headphones"></i>
-                <span>Music</span>
-              </div>
-              <div class="interest-item">
-                <i class="fas fa-tshirt"></i>
-                <span>Fashion</span>
-              </div>
-              <div class="interest-item">
-                <i class="fas fa-code"></i>
-                <span>Frontend</span>
-              </div>
-            </div>
+            <ul class="interests-list">
+              <li>
+                <i class="fas fa-camera" aria-hidden="true"></i> Photography
+              </li>
+              <li>
+                <i class="fas fa-headphones" aria-hidden="true"></i> Music
+              </li>
+              <li><i class="fas fa-tshirt" aria-hidden="true"></i> Fashion</li>
+              <li><i class="fas fa-code" aria-hidden="true"></i> Frontend</li>
+            </ul>
           </div>
         </div>
       </section>
@@ -426,6 +418,11 @@
                   >
                     <i class="fab fa-github" aria-hidden="true"></i>
                     <span>View Code</span>
+                  </a>
+
+                  <a class="project-link-btn" href="case-crm.html">
+                    <i class="fas fa-book-open" aria-hidden="true"></i>
+                    <span>Case Study</span>
                   </a>
                 </div>
               </div>
@@ -594,24 +591,24 @@
             <article class="benefit-card">
               <h3>Design + Frontend</h3>
               <p>
-                I combine UI thinking and frontend implementation, so interfaces
-                look polished and work smoothly.
+                I design in Figma and build it myself, from wireframes to a
+                deployed app like the CRM demo.
               </p>
             </article>
 
             <article class="benefit-card">
-              <h3>Responsive by Default</h3>
+              <h3>Full-stack basics</h3>
               <p>
-                I build layouts that work across desktop, tablet, and mobile
-                without breaking usability.
+                I can connect a Next.js interface to a FastAPI and PostgreSQL
+                backend, not only style it.
               </p>
             </article>
 
             <article class="benefit-card">
-              <h3>Clear Communication</h3>
+              <h3>Honest scope</h3>
               <p>
-                I keep project communication structured, transparent, and
-                focused on delivery.
+                Every project states what it does and doesn't do, so you know
+                exactly what you're getting.
               </p>
             </article>
           </div>
@@ -625,7 +622,9 @@
             <div class="skills-list" data-aos="fade-right">
               <span>Next.js</span>
               <span>React</span>
+              <span>TypeScript</span>
               <span>JavaScript</span>
+              <span>HTML / CSS</span>
               <span>Tailwind CSS</span>
               <span>SCSS (7-1 Architecture)</span>
               <span>GSAP</span>
@@ -635,6 +634,7 @@
             <h3>Backend</h3>
             <div class="skills-list" data-aos="fade-right">
               <span>FastAPI</span>
+              <span>Python</span>
               <span>Node.js</span>
               <span>PostgreSQL</span>
               <span>Git</span>
@@ -721,17 +721,16 @@
                       id="contact-consent"
                       required
                     />
-
-                    <span>
+                    <span class="editorial-consent__box"></span>
+                    <span class="editorial-consent__text">
                       I agree to the
                       <a
                         href="privacy.html"
                         target="_blank"
                         rel="noopener noreferrer"
                         class="form-terms_link"
+                        >Privacy Policy</a
                       >
-                        Privacy Policy
-                      </a>
                     </span>
                   </label>
 
@@ -742,10 +741,7 @@
                   ></p>
                 </div>
 
-                <button
-                  class="contact-section_button editorial-submit"
-                  type="submit"
-                >
+                <button class="editorial-submit" type="submit">
                   <span>Send message</span>
                   <span class="editorial-submit__arrow" aria-hidden="true"
                     >↗</span
@@ -850,6 +846,9 @@
               <a class="footer_address-link" href="hire-me.html">
                 Freelance services
               </a>
+              <a class="footer_address-link" href="contract.html">
+                Service Agreement
+              </a>
               <p class="footer_address-copyright" id="copyright"></p>
               <p class="footer-mini-text">
                 Frontend Developer & UI/UX Designer based in Prague.
@@ -889,7 +888,15 @@
     </div>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/typed.js@2.1.0/dist/typed.umd.js"
+      defer
+    ></script>
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"
+      defer
+    ></script>
     <script src="js/script.js" defer></script>
   </body>
 </html>
